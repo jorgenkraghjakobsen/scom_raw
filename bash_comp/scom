@@ -1,0 +1,53 @@
+# scom completion
+_scom() {
+ local cur symbols files
+ cur="${COMP_WORDS[COMP_CWORD]}"
+ prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+ default="r w d b u q"
+ dmux_inputs=`/bin/db_lookup system.d0_mux_sel` 
+ symbols=`/bin/db_lookup`
+ tables=`/bin/db_list`
+ 
+ COMPREPLY=()
+ case "${prev}" in
+   r)
+     COMPREPLY=( $( compgen -W "$symbols" -- "$cur" ) )
+     return 0
+     ;;
+   w)
+     COMPREPLY=( $( compgen -W "$symbols" -- "$cur" ) )
+     return 0
+	   ;;
+   f)
+       files=`ls *.ihex`
+       COMPREPLY=( $( compgen -W "$files" -- "$cur" ) )
+       return 0
+  	   ;;
+   trim)
+     COMPREPLY=( $( compgen -W "$symbols" -- "$cur" ) )
+     return 0
+	 ;;
+   q)
+     COMPREPLY=( $( compgen -W "$tables" -- "$cur" ) )
+	 return 0
+	 ;;
+   system.d0_mux_sel)
+     COMPREPLY=( $( compgen -W "$dmux_inputs" -- "$cur" ) )
+	 return 0
+	 ;;
+   system.d1_mux_sel)
+     COMPREPLY=( $( compgen -W "$dmux_inputs" -- "$cur" ) )
+	 return 0
+     ;;
+     
+   *)
+   ;;
+ esac
+
+ COMPREPLY=( $( compgen -W "$default" -- "$cur" ) )
+ return 0
+} && complete -F _scom scom
+
+
+#complete -F _scom -o filenames scom

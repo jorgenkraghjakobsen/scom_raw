@@ -1,0 +1,26 @@
+# Set i2c address 
+echo 0x20 > .com_i2c 
+
+# Set database format 
+echo 2 > .db_version 
+
+# Set database 
+echo merus_map.ma120_rev0 > .reg_db
+
+# Reset device 
+
+gpio write 15 0 
+gpio write 15 1 
+
+../../bin/dif
+
+scom w core.pa.pvdd_scale 1
+scom w core.pa.mode_pbtl 1
+
+scom w core.test.xpin_mode 1 
+  
+
+../../bin/dif 
+
+ 
+

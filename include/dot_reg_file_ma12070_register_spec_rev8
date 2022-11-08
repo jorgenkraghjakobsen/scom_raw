@@ -1,0 +1,13 @@
+#---------------------------------------------------------------------------------------*/
+#   Merus Audio MA120x0 register map                                                    */
+#                                                                                       */
+#   Provides : Comma seperated version of symbol database for merus audio amplifiers    */
+#                                                                                       */
+#   Symbols is a collection of 1 to 8 bits within a single address                      */
+#                                                                                       */
+#   Provided as is for internal use only - do not copy - do not share                   */
+#                                                                                       */
+#   Timestamp                        :                         Mon May 11 09:14:42 2020 */
+#   Created from database            :                       ma12070_register_spec_rev8 */
+#   Errors and updates please contact:       Jorgen Kragh Jakobsen, jkj@merus-audio.com */
+#---------------------------------------------------------------------------------------*/

@@ -1,0 +1,44 @@
+#---------------------------------------------------------------------------------------*/
+#   Merus Audio MA120x0 register map                                                    */
+#                                                                                       */
+#   Provides : Comma seperated version of symbol database for merus audio amplifiers    */
+#                                                                                       */
+#   Symbols is a collection of 1 to 8 bits within a single address                      */
+#                                                                                       */
+#   Provided as is for internal use only - do not copy - do not share                   */
+#                                                                                       */
+#   Timestamp                        :                         Tue Apr 30 09:57:18 2019 */
+#   Created from database            :                        ma120_auto_test_pcb_cpld1 */
+#   Errors and updates please contact:       Jorgen Kragh Jakobsen, jkj@merus-audio.com */
+#---------------------------------------------------------------------------------------*/
+vdd_lvl_sel 0x0001 0 4 0 Vdd level select
+vdio_lvl_sel 0x0001 4 3 0 Vdd_adj level select
+tmd_enable 0x0001 7 1 0 Turns the TMD_In on 
+int_vm_sel 0x0002 0 2 0 Selects Ch1 voltage devide
+reg_sel_vdd 0x0002 2 1 0 Enabels Vdd and Vdd_adj Regulators
+i2c_aload_en 0x0009 7 1 0 Enable i2c bus for load box
+im_cd_dig 0x000a 0 1 0 activates relay for measuring current for cd_dig
+im_irds_sel 0x000a 1 1 0 activates reley for measuring irds
+vdio_sel 0x000a 2 1 0 select I/O voltage level
+vm_sel_rds 0x000b 0 4 0 rds voltage selection
+sel_psrr 0x000b 5 3 0 PSRR input selection 1=pvdd 2=vdd 3=vdd_reg
+irds_sel 0x000c 0 4 0 irds select
+clk_trimming 0x000c 5 2 0 for internal clk 1=24MHz 2=50MHz on sck for internal trimming
+Nreset 0x000e 0 1 0 Reset CPLD1
+short_term1 0x0011 0 3 0 Short circ. terminal 1 select
+short_term2 0x0011 3 3 0 Short circ. terminal 2 select
+short_continuous 0x0011 6 1 0 Short circ. cont./pulsed select
+short_sw_on 0x0011 7 1 0 Short circ. switch on/off
+short_duration 0x0012 0 2 0 Short circuit duration (0=200ns, 1=10us, 2=100us, 3=indefinite)
+short_off_duration 0x0012 2 2 0 Short-cycle off-duration (0=1us, 1=50us, 2=500us, 3=500us)
+iload_ctrl 0x0014 0 4 0 Control bits for current DAC
+iload_start 0x0014 7 1 0 Start bit for current DAC
+iload_val 0x0015 0 8 0 Value of the current DAC 8 MSB
+iload_sel 0x0016 0 3 0 Current load relay select
+iload_val1 0x0017 0 4 0 Value of the current DAC 4 LSB
+aload_i2c 0x0018 0 1 0 Enable I2C for load control.
+PMcfg_BTL_A__dmy 0x001e 0 1 0 Dummy register
+cfg_dmy 0x001e 1 1 0 Dummy register
+dmy_sys 0x003f 0 1 0 Dummy register
+dcu_mon0__dmy 0x003f 1 1 0 Dummy register
+dcu_mon1__dmy 0x003f 2 1 0 Dummy register

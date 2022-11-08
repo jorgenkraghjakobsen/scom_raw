@@ -1,0 +1,57 @@
+#---------------------------------------------------------------------------------------*/
+#   Merus Audio MA120x0 register map                                                    */
+#                                                                                       */
+#   Provides : Comma seperated version of symbol database for merus audio amplifiers    */
+#                                                                                       */
+#   Symbols is a collection of 1 to 8 bits within a single address                      */
+#                                                                                       */
+#   Provided as is for internal use only - do not copy - do not share                   */
+#                                                                                       */
+#   Timestamp                        :                         Tue Apr 30 09:57:18 2019 */
+#   Created from database            :                        ma120_auto_test_pcb_cpld0 */
+#   Errors and updates please contact:       Jorgen Kragh Jakobsen, jkj@merus-audio.com */
+#---------------------------------------------------------------------------------------*/
+vm_sel 0x0002 0 4 0 Voltage measurement channel select
+im_sel 0x0003 0 4 0 Current measurement channel select
+au_load_setup 0x0003 4 3 0 Audio power load relay configuration
+au_in_setup 0x0004 0 3 0 Audio input relay setting
+au_ac_couple 0x0004 3 1 0 High to AC couple analog audio input
+au_in_gnd_break 0x0004 4 1 0 High to break XLR audio input ground
+dut_sif_setup 0x0005 4 2 0 DUT serial control interface setup - 0-1-2 => off-i2c-spi
+dut_i2c_addr 0x0005 1 2 0 DUT I2C address offset
+dut_enable 0x0005 7 1 0 High to enable DUT
+dut_unmute 0x0005 6 1 0 High to unmute DUT
+xpin_sense_digital 0x0005 3 1 0 High to sense with dig circuitry - else analog
+cfgpin_mode_dac 0x0006 0 1 0 High for DAC drive - low for dig drive
+cfgpin_clkms_dig_out 0x0006 1 1 1 Dig-mode clkms pin drive
+cfgpin_msel_dig_out 0x0006 2 2 1 Dig-mode MSEL vector
+dac_ctrl_0 0x0007 0 4 0 DAC0 config bits 
+dac_start_0 0x0007 7 1 0 DAC0 Load
+dac_val_0 0x0008 0 8 0 DAC0 value bits
+dac_ctrl_1 0x0009 0 4 0 DAC1 config bits
+dac_start_1 0x0009 7 1 0 DAC1 load
+dac_val_1 0x000a 0 8 0 DAC1 value bits
+i2s_src_xtal 0x000b 2 1 0 High to select crystal I2S data clock.
+i2s_src_sel 0x000b 0 2 0 I2S source select.
+spdif_en 0x000b 3 1 0 High to enable SPDIF receiver
+osc_sel 0x000c 0 4 0 Oscilloscope channel select
+au_out_setup1 0x000c 6 2 0 XLR output 1 setup
+au_out_setup0 0x000c 4 2 0 XLR output 0 setup
+vcf0_mon_en 0x000d 0 1 0 Vcly ch0 monitoring enable/disable
+vcf1_mon_en 0x000d 1 1 0 Vcly ch0 monitoring enable/disable
+Nreset 0x000e 0 1 0 Reset CPLD0
+clk_count_input_sel 0x000f 0 2 0 0 = nsel pin  1 = nerror pin
+clk_count_divider_ratio 0x000f 4 4 0 number of division on incomming clock
+clk_count_enable 0x000f 2 1 0 clock count enable
+dac_val0_0 0x0010 0 4 0 Value of current DAC0 4 LSB
+dac_val1_1 0x0011 0 4 0 Value of current DAC1 4 LSB
+vdio_buf_sel 0x0012 0 2 0 selects the if high vdio buffer or low buffer should be used 1=vdio_low 2=vdio_high
+i2s_do_sns 0x0013 0 1 0 turns on if i2s_do signal should go to CPLD input for clk counting
+test_mode 0x0014 0 1 0 sets the msel output pin to floating and a 18k resistor is set to gnd
+cfg_dmy 0x001e 0 1 0 Dummy register
+PMcfg_BTL_A__dmy 0x001e 1 1 0 Dummy register
+clk_count_low 0x0036 0 8 0 general purpose clock counter low
+clk_count_high 0x0037 0 8 0 general purpose clock counter high
+dmy_sys 0x003f 0 1 0 Dummy register
+dcu_mon0__dmy 0x003f 1 1 0 Dummy register
+dcu_mon1__dmy 0x003f 2 1 0 Dummy register

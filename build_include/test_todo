@@ -1,0 +1,11 @@
+
+10.11.2017/JKJ
+Remove acfg read modify write atempt and do a correct double read.
+
+
+23.2.2017/JKJ
+
+In dir test currently a example that test libscom + a few macros from the
+ma120x0.h files
+
+A test that focus and do a deeper test on ma120x0.h is needed

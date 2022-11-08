@@ -1,0 +1,16 @@
+# scom test cases 
+
+scom := ../../bin/scom 
+
+
+
+
+
+# Old use case with FTDI usb to serial interface
+# I2C read/write single multibyte 
+
+       
+
+
+
+

@@ -1,0 +1,1360 @@
+core.pa.PMP_select 0x0000 0 3 2 Power Mode Profile selection
+core.pa.mode_pbtl 0x0000 3 1 0 High to use PBTL mode
+core.pa.pvdd_scale 0x0000 4 2 3 Pvdd level config. for DNR optimization.
+core.pa.TBD_reg_ctrl 0x0000 6 1 0 High: override pin programmed settings with register stettings<br>
+core.pa.gd_dVdt 0x0001 0 2 3 Gate driver dV/dt (strength) selection. "00" = lowest, "11" = highest<br>
+core.pa.mute_ch0 0x0002 0 1 0 High to force channel 0 to mute.
+core.pa.mute_ch1 0x0002 1 1 0 High to force channel 1 to mute
+core.pa.disable_ch0 0x0002 2 1 0 
+core.pa.disable_ch1 0x0002 3 1 0 High to disable channel 1.
+core.pa.standby 0x0002 4 1 0 High to force chip standby.
+core.pa.dsp_enable 0x0005 1 1 0 High to enable the digital audio processor
+core.pa.dsp_restart 0x0005 2 1 0 High: the DSP is halted, Low: the DSP is running
+core.pa.volume_ch0 0x0003 0 8 32 Channel 0 volume setting
+core.pa.volume_ch1 0x0004 0 8 32 Channel 1 volume setting
+core.pa.dsp_bypass 0x0005 3 1 0 High to take audio directly from i2s/tdm input
+core.pa.vol_instant 0x0005 0 1 0 High: Apply volume settings instantly - without ramp
+core.pa.clip_pin 0x0006 0 1 0 State of the "clip" signal driving the nClip pin -- "1" means "clip"<br>
+core.pa.err_pin 0x0006 1 1 0 Status of the "err" signal driving the nErr pin -- "1" means "error"<br>
+core.pa.temp_chip 0x0007 0 8 0 Current chip temperature reading
+core.pa.pvdd_chip 0x0008 0 8 0 Current chip Pvdd reading
+core.pa.attack_ch1 0x000a 0 5 0 Channel 1 attack time for limiter
+core.pa.attack_ch0 0x0009 0 5 0 Channel 0 attack time for limiter
+core.pa.release_ch0 0x000b 0 5 18 Channel 0 release time for limiter
+core.pa.release_ch1 0x000c 0 5 18 Channel 1 release time for limiter
+core.pa.threshold_ch0 0x000d 0 8 0 Channel 0 limiter threshold
+core.pa.threshold_ch1 0x000e 0 8 0 Channel 1 limiter threshold
+core.i2s_tdm.data_alignment 0x0010 0 3 0 000: i2s, 001: left justified, 100: right justified 16bit, 101: right justified 18bit, 110: right justified 20bit, 111: right justified 24bit
+core.i2s_tdm.sck_pol 0x0010 3 1 1 Active edge of SCK for data and word strobe; 0: rising, 1: falling
+core.i2s_tdm.slot_size 0x0010 4 2 0 Channel slot size: 00: 32bit, 01: 24bit, 10: 16bit
+core.i2s_tdm.ws_fs_rising 0x0010 6 1 0 0: Frame starts at falling ws/fs; 1: frame starts at rising ws/fs
+core.i2s_tdm.lsb_first 0x0010 7 1 0 0: The MSB is transmitted first; 1: The LSB is transmitted first
+core.i2s_tdm.tdm_input_map0 0x0011 0 5 0 tdm input map ch0 xxx (thh)
+core.i2s_tdm.tdm_input_map1 0x0012 0 5 1 tdm input map ch1 xxx (thh)
+core.i2s_tdm.tdm_input_map2 0x0013 0 5 0 tdm input map ch2 xxx (thh)
+core.i2s_tdm.tdm_input_map3 0x0014 0 5 0 tdm input map ch3 xxx (thh)
+core.i2s_tdm.tdm_output_map0 0x0015 0 3 0 tdm output map slot0 xxx (thh)
+core.i2s_tdm.tdm_output_map1 0x0015 3 3 0 tdm output map slot1 xxx (thh)
+core.i2s_tdm.tdm_output_map2 0x0016 0 3 0 tdm output map slot2 xxx (thh)
+core.i2s_tdm.tdm_output_map3 0x0016 3 3 0 tdm output map slot3 xxx (thh)
+core.i2s_tdm.tdm_output_map4 0x0017 0 3 0 tdm output map slot4 xxx (thh)
+core.i2s_tdm.tdm_output_map5 0x0017 3 3 0 tdm output map slot5 xxx (thh)
+core.i2s_tdm.tdm_output_map6 0x0018 0 3 0 tdm output map slot6 xxx (thh)
+core.i2s_tdm.tdm_output_map7 0x0018 3 3 0 tdm output map slot7 xxx (thh)
+core.i2s_tdm.tdm_output_map8 0x0019 0 3 0 tdm output map slot8 xxx (thh)
+core.i2s_tdm.tdm_output_map9 0x0019 3 3 0 tdm output map slot9 xxx (thh)
+core.i2s_tdm.tdm_output_map10 0x001a 0 3 0 tdm output map slot10 xxx (thh)
+core.i2s_tdm.tdm_output_map11 0x001a 3 3 0 tdm output map slot11 xxx (thh)
+core.i2s_tdm.tdm_output_map12 0x001b 0 3 0 tdm output map slot12 xxx (thh)
+core.i2s_tdm.tdm_output_map13 0x001b 3 3 0 tdm output map slot13 xxx (thh)
+core.i2s_tdm.tdm_output_map14 0x001c 0 3 0 tdm output map slot14 xxx (thh)
+core.i2s_tdm.tdm_output_map15 0x001c 3 3 0 tdm output map slot15 xxx (thh)
+core.i2s_tdm.tdm_output_map16 0x001d 0 3 0 tdm output map slot16 xxx (thh)
+core.i2s_tdm.tdm_output_map17 0x001d 3 3 0 tdm output map slot17 xxx (thh)
+core.i2s_tdm.tdm_output_map18 0x001e 0 3 0 tdm output map slot18 xxx (thh)
+core.i2s_tdm.tdm_output_map19 0x001e 3 3 0 tdm output map slot19 xxx (thh)
+core.i2s_tdm.tdm_output_map20 0x001f 0 3 0 tdm output map slot20 xxx (thh)
+core.i2s_tdm.tdm_output_map21 0x001f 3 3 0 tdm output map slot21 xxx (thh)
+core.i2s_tdm.tdm_output_map22 0x0020 0 3 0 tdm output map slot22 xxx (thh)
+core.i2s_tdm.tdm_output_map23 0x0020 3 3 0 tdm output map slot23 xxx (thh)
+core.i2s_tdm.tdm_output_map24 0x0021 0 3 0 tdm output map slot24 xxx (thh)
+core.i2s_tdm.tdm_output_map25 0x0021 3 3 0 tdm output map slot25 xxx (thh)
+core.i2s_tdm.tdm_output_map26 0x0022 0 3 0 tdm output map slot26 xxx (thh)
+core.i2s_tdm.tdm_output_map27 0x0022 3 3 0 tdm output map slot27 xxx (thh)
+core.i2s_tdm.tdm_output_map28 0x0023 0 3 0 tdm output map slot28 xxx (thh)
+core.i2s_tdm.tdm_output_map29 0x0023 3 3 0 tdm output map slot29 xxx (thh)
+core.i2s_tdm.tdm_output_map30 0x0024 0 3 0 tdm output map slot30 xxx (thh)
+core.i2s_tdm.tdm_output_map31 0x0024 3 3 0 tdm output map slot31 xxx (thh)
+core.i2s_tdm.tx_loopback 0x0025 0 1 0 1: tx audio data is a loop back of rx audio data
+core.i2s_tdm.tx_enable 0x0025 2 1 0 1: enable the i2s / tdm data output pin
+core.i2s_tdm.rx_enable 0x0025 1 1 1 1: enable the i2s / tdm receiver. (Must be enabled to play audio)
+core.i2s_tdm.tx_strong_drive 0x0025 3 1 1 1: Enable extra drive strength on i2s / tdm data output pin (i2s_do)
+core.pmc.pm_cfg.0.pwmFreqMode 0x0030 0 2 3 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.0.gdsFreqMode 0x0030 2 2 3 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.0.modType 0x0030 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.0.lf_bw_scale 0x0030 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.0.pbtl_half 0x0031 0 1 1 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.0.gd_hvpu_low 0x0031 1 1 1 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.0.dtsteps_nom 0x0031 2 4 5 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.0.bal_bw 0x0031 6 2 1 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.1.pwmFreqMode 0x0033 0 2 3 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.1.gdsFreqMode 0x0033 2 2 2 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.1.modType 0x0033 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.1.lf_bw_scale 0x0033 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.1.pbtl_half 0x0034 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.1.gd_hvpu_low 0x0034 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.1.dtsteps_nom 0x0034 2 4 3 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.1.bal_bw 0x0034 6 2 2 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.2.pwmFreqMode 0x0036 0 2 3 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.2.gdsFreqMode 0x0036 2 2 0 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.2.modType 0x0036 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.2.lf_bw_scale 0x0036 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.2.pbtl_half 0x0037 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.2.gd_hvpu_low 0x0037 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.2.dtsteps_nom 0x0037 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.2.bal_bw 0x0037 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.3.pwmFreqMode 0x0039 0 2 2 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.3.gdsFreqMode 0x0039 2 2 0 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.3.modType 0x0039 4 2 2 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.3.lf_bw_scale 0x0039 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.3.pbtl_half 0x003a 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.3.gd_hvpu_low 0x003a 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.3.dtsteps_nom 0x003a 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.3.bal_bw 0x003a 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.4.pwmFreqMode 0x003c 0 2 2 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.4.gdsFreqMode 0x003c 2 2 3 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.4.modType 0x003c 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.4.lf_bw_scale 0x003c 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.4.pbtl_half 0x003d 0 1 1 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.4.gd_hvpu_low 0x003d 1 1 1 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.4.dtsteps_nom 0x003d 2 4 5 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.4.bal_bw 0x003d 6 2 1 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.5.pwmFreqMode 0x003f 0 2 2 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.5.gdsFreqMode 0x003f 2 2 2 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.5.modType 0x003f 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.5.lf_bw_scale 0x003f 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.5.pbtl_half 0x0040 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.5.gd_hvpu_low 0x0040 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.5.dtsteps_nom 0x0040 2 4 3 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.5.bal_bw 0x0040 6 2 2 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.6.pwmFreqMode 0x0042 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.6.gdsFreqMode 0x0042 2 2 0 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.6.modType 0x0042 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.6.lf_bw_scale 0x0042 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.6.pbtl_half 0x0043 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.6.gd_hvpu_low 0x0043 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.6.dtsteps_nom 0x0043 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.6.bal_bw 0x0043 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.7.pwmFreqMode 0x0045 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.7.gdsFreqMode 0x0045 2 2 0 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.7.modType 0x0045 4 2 2 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.7.lf_bw_scale 0x0045 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.7.pbtl_half 0x0046 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.7.gd_hvpu_low 0x0046 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.7.dtsteps_nom 0x0046 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.7.bal_bw 0x0046 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.8.pwmFreqMode 0x0048 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.8.gdsFreqMode 0x0048 2 2 3 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.8.modType 0x0048 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.8.lf_bw_scale 0x0048 6 2 3 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.8.pbtl_half 0x0049 0 1 1 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.8.gd_hvpu_low 0x0049 1 1 1 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.8.dtsteps_nom 0x0049 2 4 5 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.8.bal_bw 0x0049 6 2 1 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.9.pwmFreqMode 0x004b 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.9.gdsFreqMode 0x004b 2 2 2 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.9.modType 0x004b 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.9.lf_bw_scale 0x004b 6 2 3 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.9.pbtl_half 0x004c 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.9.gd_hvpu_low 0x004c 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.9.dtsteps_nom 0x004c 2 4 3 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.9.bal_bw 0x004c 6 2 2 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.10.pwmFreqMode 0x004e 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.10.gdsFreqMode 0x004e 2 2 0 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.10.modType 0x004e 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.10.lf_bw_scale 0x004e 6 2 3 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.10.pbtl_half 0x004f 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.10.gd_hvpu_low 0x004f 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.10.dtsteps_nom 0x004f 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.10.bal_bw 0x004f 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.11.pwmFreqMode 0x0051 0 2 2 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.11.gdsFreqMode 0x0051 2 2 0 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.11.modType 0x0051 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.11.lf_bw_scale 0x0051 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.11.pbtl_half 0x0052 0 1 1 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.11.gd_hvpu_low 0x0052 1 1 1 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.11.dtsteps_nom 0x0052 2 4 5 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.11.bal_bw 0x0052 6 2 1 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.12.pwmFreqMode 0x0054 0 2 2 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.12.gdsFreqMode 0x0054 2 2 3 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.12.modType 0x0054 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.12.lf_bw_scale 0x0054 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.12.pbtl_half 0x0055 0 1 1 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.12.gd_hvpu_low 0x0055 1 1 1 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.12.dtsteps_nom 0x0055 2 4 5 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.12.bal_bw 0x0055 6 2 1 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.13.pwmFreqMode 0x0057 0 2 2 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.13.gdsFreqMode 0x0057 2 2 1 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.13.modType 0x0057 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.13.lf_bw_scale 0x0057 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.13.pbtl_half 0x0058 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.13.gd_hvpu_low 0x0058 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.13.dtsteps_nom 0x0058 2 4 3 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.13.bal_bw 0x0058 6 2 2 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.14.pwmFreqMode 0x005a 0 2 3 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.14.gdsFreqMode 0x005a 2 2 1 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.14.modType 0x005a 4 2 3 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.14.lf_bw_scale 0x005a 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.14.pbtl_half 0x005b 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.14.gd_hvpu_low 0x005b 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.14.dtsteps_nom 0x005b 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.14.bal_bw 0x005b 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.15.pwmFreqMode 0x005d 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.15.gdsFreqMode 0x005d 2 2 1 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.15.modType 0x005d 4 2 2 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.15.lf_bw_scale 0x005d 6 2 1 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.15.pbtl_half 0x005e 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.15.gd_hvpu_low 0x005e 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.15.dtsteps_nom 0x005e 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.15.bal_bw 0x005e 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.16.pwmFreqMode 0x0060 0 2 2 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.16.gdsFreqMode 0x0060 2 2 1 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.16.modType 0x0060 4 2 1 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.16.lf_bw_scale 0x0060 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.16.pbtl_half 0x0061 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.16.gd_hvpu_low 0x0061 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.16.dtsteps_nom 0x0061 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.16.bal_bw 0x0061 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.17.pwmFreqMode 0x0063 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.17.gdsFreqMode 0x0063 2 2 1 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.17.modType 0x0063 4 2 1 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.17.lf_bw_scale 0x0063 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.17.pbtl_half 0x0064 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.17.gd_hvpu_low 0x0064 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.17.dtsteps_nom 0x0064 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.17.bal_bw 0x0064 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.18.pwmFreqMode 0x0066 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.18.gdsFreqMode 0x0066 2 2 1 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.18.modType 0x0066 4 2 1 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.18.lf_bw_scale 0x0066 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.18.pbtl_half 0x0067 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.18.gd_hvpu_low 0x0067 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.18.dtsteps_nom 0x0067 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.18.bal_bw 0x0067 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.pm_cfg.19.pwmFreqMode 0x0069 0 2 1 0:Base, 1:Base/2, 2:Base/4, 3:Base/8
+core.pmc.pm_cfg.19.gdsFreqMode 0x0069 2 2 1 GD serial bus reshesh rate. 0:fsw*2, 1:fsw*(2/3), 2:fsw/?, 3: fsw/?
+core.pmc.pm_cfg.19.modType 0x0069 4 2 1 PWM BTL modulation type; 0 => 2-level (AD), 1 => 3-level (BD), 2 => 3-level (FC no-CM), 3 => 5-level
+core.pmc.pm_cfg.19.lf_bw_scale 0x0069 6 2 0 Loop filter freq. resp. mode; 0 => low-bw, 1=> mid-bw; 2,3=> high-bw
+core.pmc.pm_cfg.19.pbtl_half 0x006a 0 1 0 High to use only a single channel for PBTL operation (power saving feature), low for std. PBTL.
+core.pmc.pm_cfg.19.gd_hvpu_low 0x006a 1 1 0 High to use reduced-pullup (x1/4) in gate driver for gate charge power saving.
+core.pmc.pm_cfg.19.dtsteps_nom 0x006a 2 4 2 Nominal number of dead time steps (5-ish ns per step.)
+core.pmc.pm_cfg.19.bal_bw 0x006a 6 2 3 Vcfly balancing HW loop gain/bandwidth. "00" => lowest. "11" => highest.
+core.pmc.otp.PMP0.PMcfg0_idx 0x006c 0 4 0 4b. PowerMode 0 settings pointer.
+core.pmc.otp.PMP0.PMcfg1_idx 0x006c 4 4 0 4b. PowerMode 1 settings pointer.
+core.pmc.otp.PMP0.PMcfg2_idx 0x006d 0 4 1 4b. PowerMode 2 settings pointer.
+core.pmc.otp.PMP0.PMcfg3_idx 0x006d 4 4 2 4b. PowerMode 3 settings pointer.
+core.pmc.otp.PMP0.PMcfg_lowPvdd_idx 0x006e 0 2 0 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.otp.PMP0.PMcfg_lowPvddT_idx 0x006e 2 2 0 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.otp.PMP0.PM_max 0x006e 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP0.PM_min 0x006e 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP0.lf_int1_rscale_low 0x006f 0 1 0 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.otp.PMP0.lf_bias_scale 0x006f 1 2 0 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.otp.PMP0.lf_int3_c_scale 0x006f 3 2 3 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.otp.PMP0.lf_gain_fwd 0x006f 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.otp.PMP1.PMcfg0_idx 0x0071 0 4 0 4b. PowerMode 0 settings pointer.
+core.pmc.otp.PMP1.PMcfg1_idx 0x0071 4 4 0 4b. PowerMode 1 settings pointer.
+core.pmc.otp.PMP1.PMcfg2_idx 0x0072 0 4 1 4b. PowerMode 2 settings pointer.
+core.pmc.otp.PMP1.PMcfg3_idx 0x0072 4 4 3 4b. PowerMode 3 settings pointer.
+core.pmc.otp.PMP1.PMcfg_lowPvdd_idx 0x0073 0 2 0 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.otp.PMP1.PMcfg_lowPvddT_idx 0x0073 2 2 0 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.otp.PMP1.PM_max 0x0073 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP1.PM_min 0x0073 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP1.lf_int1_rscale_low 0x0074 0 1 0 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.otp.PMP1.lf_bias_scale 0x0074 1 2 0 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.otp.PMP1.lf_int3_c_scale 0x0074 3 2 3 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.otp.PMP1.lf_gain_fwd 0x0074 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.otp.PMP2.PMcfg0_idx 0x0076 0 4 4 4b. PowerMode 0 settings pointer.
+core.pmc.otp.PMP2.PMcfg1_idx 0x0076 4 4 4 4b. PowerMode 1 settings pointer.
+core.pmc.otp.PMP2.PMcfg2_idx 0x0077 0 4 5 4b. PowerMode 2 settings pointer.
+core.pmc.otp.PMP2.PMcfg3_idx 0x0077 4 4 6 4b. PowerMode 3 settings pointer.
+core.pmc.otp.PMP2.PMcfg_lowPvdd_idx 0x0078 0 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.otp.PMP2.PMcfg_lowPvddT_idx 0x0078 2 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.otp.PMP2.PM_max 0x0078 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP2.PM_min 0x0078 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP2.lf_int1_rscale_low 0x0079 0 1 0 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.otp.PMP2.lf_bias_scale 0x0079 1 2 1 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.otp.PMP2.lf_int3_c_scale 0x0079 3 2 3 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.otp.PMP2.lf_gain_fwd 0x0079 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.otp.PMP3.PMcfg0_idx 0x007b 0 4 4 4b. PowerMode 0 settings pointer.
+core.pmc.otp.PMP3.PMcfg1_idx 0x007b 4 4 4 4b. PowerMode 1 settings pointer.
+core.pmc.otp.PMP3.PMcfg2_idx 0x007c 0 4 5 4b. PowerMode 2 settings pointer.
+core.pmc.otp.PMP3.PMcfg3_idx 0x007c 4 4 7 4b. PowerMode 3 settings pointer.
+core.pmc.otp.PMP3.PMcfg_lowPvdd_idx 0x007d 0 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.otp.PMP3.PMcfg_lowPvddT_idx 0x007d 2 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.otp.PMP3.PM_max 0x007d 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP3.PM_min 0x007d 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP3.lf_int1_rscale_low 0x007e 0 1 0 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.otp.PMP3.lf_bias_scale 0x007e 1 2 1 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.otp.PMP3.lf_int3_c_scale 0x007e 3 2 3 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.otp.PMP3.lf_gain_fwd 0x007e 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.otp.PMP4.PMcfg0_idx 0x0080 0 4 8 4b. PowerMode 0 settings pointer.
+core.pmc.otp.PMP4.PMcfg1_idx 0x0080 4 4 8 4b. PowerMode 1 settings pointer.
+core.pmc.otp.PMP4.PMcfg2_idx 0x0081 0 4 9 4b. PowerMode 2 settings pointer.
+core.pmc.otp.PMP4.PMcfg3_idx 0x0081 4 4 10 4b. PowerMode 3 settings pointer.
+core.pmc.otp.PMP4.PMcfg_lowPvdd_idx 0x0082 0 2 2 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.otp.PMP4.PMcfg_lowPvddT_idx 0x0082 2 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.otp.PMP4.PM_max 0x0082 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP4.PM_min 0x0082 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP4.lf_int1_rscale_low 0x0083 0 1 1 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.otp.PMP4.lf_bias_scale 0x0083 1 2 1 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.otp.PMP4.lf_int3_c_scale 0x0083 3 2 2 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.otp.PMP4.lf_gain_fwd 0x0083 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.otp.PMP5.PMcfg0_idx 0x0085 0 4 8 4b. PowerMode 0 settings pointer.
+core.pmc.otp.PMP5.PMcfg1_idx 0x0085 4 4 8 4b. PowerMode 1 settings pointer.
+core.pmc.otp.PMP5.PMcfg2_idx 0x0086 0 4 9 4b. PowerMode 2 settings pointer.
+core.pmc.otp.PMP5.PMcfg3_idx 0x0086 4 4 7 4b. PowerMode 3 settings pointer.
+core.pmc.otp.PMP5.PMcfg_lowPvdd_idx 0x0087 0 2 2 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.otp.PMP5.PMcfg_lowPvddT_idx 0x0087 2 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.otp.PMP5.PM_max 0x0087 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP5.PM_min 0x0087 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.otp.PMP5.lf_int1_rscale_low 0x0088 0 1 1 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.otp.PMP5.lf_bias_scale 0x0088 1 2 1 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.otp.PMP5.lf_int3_c_scale 0x0088 3 2 2 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.otp.PMP5.lf_gain_fwd 0x0088 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.otp.pmHwCfg_suppl.pwm_iramp_table.0 0x008a 0 4 7 PWM iramp setting for each pwmFreqMode.
+core.pmc.otp.pmHwCfg_suppl.pwm_iramp_table.1 0x008a 4 4 7 PWM iramp setting for each pwmFreqMode.
+core.pmc.otp.pmHwCfg_suppl.pwm_iramp_table.2 0x008b 0 4 3 PWM iramp setting for each pwmFreqMode.
+core.pmc.otp.pmHwCfg_suppl.pwm_iramp_table.3 0x008b 4 4 1 PWM iramp setting for each pwmFreqMode.
+core.pmc.otp.pmHwCfg_suppl.dtsteps_delta_table.0 0x008c 0 4 3 dtsteps modification depending on gd_str.
+core.pmc.otp.pmHwCfg_suppl.dtsteps_delta_table.1 0x008c 4 4 2 dtsteps modification depending on gd_str.
+core.pmc.otp.pmHwCfg_suppl.dtsteps_delta_table.2 0x008d 0 4 1 dtsteps modification depending on gd_str.
+core.pmc.otp.pmHwCfg_suppl.dtsteps_delta_table.3 0x008d 4 4 0 dtsteps modification depending on gd_str.
+core.pmc.otp.pmHwCfg_suppl.ocp_blnk_table.0 0x008e 0 2 3 ocp_blnk setting for each gd_str.
+core.pmc.otp.pmHwCfg_suppl.ocp_blnk_table.1 0x008e 2 2 3 ocp_blnk setting for each gd_str.
+core.pmc.otp.pmHwCfg_suppl.ocp_blnk_table.2 0x008e 4 2 2 ocp_blnk setting for each gd_str.
+core.pmc.otp.pmHwCfg_suppl.ocp_blnk_table.3 0x008e 6 2 1 ocp_blnk setting for each gd_str.
+core.pmc.otp.Mthr_0to1 0x008f 0 8 10 PM 0->1 M limit; M=0...255; 0=>0.0, 255=>1.0
+core.pmc.otp.Mthr_1to2 0x0090 0 8 15 PM 1->2 M limit
+core.pmc.otp.Mthr_2to3 0x0091 0 8 30 PM 2->3 M limit
+core.pmc.otp.Mthr_1to0_hyst 0x0092 0 4 3 PM 1->0 M hysteresis
+core.pmc.otp.Mthr_2to1_hyst 0x0092 4 4 4 PM 2->1 M hysteresis
+core.pmc.otp.Mthr_3to2_hyst 0x0093 0 4 6 PM 3->2 M hysteresis
+core.pmc.otp.Ncycles_avg 0x0093 4 4 4 Number of swithcing cycles averaged per M calc. update
+core.pmc.otp.N_Mupd_PMup 0x0094 0 4 1 Number of M updates to be above threshold for PM increase
+core.pmc.otp.Ncount_mute_off 0x0094 4 4 1 Number of consequtive audio sample above threshold amplitude for wake-up from power-down
+core.pmc.otp.N_Mupd_PMdn__0 0x0095 0 8 64 Number of M updates to be below threshold for PM decrease
+core.pmc.otp.N_Mupd_PMdn__1 0x0096 0 8 64 Number of M updates to be below threshold for PM decrease
+core.pmc.otp.mute_signal_thr 0x0097 0 8 32 Audio signal activity detector "no activity" threshold
+core.pmc.otp.Ncount_mute_on__0 0x0098 0 8 64 Number of consequtive audio samples w/ sub-threshold amplitude for auto-power-down
+core.pmc.otp.Ncount_mute_on__1 0x0099 0 8 64 Number of consequtive audio samples w/ sub-threshold amplitude for auto-power-down
+core.pmc.otp.PMP_disableMask 0x009a 0 8 0 OTP handle for flagging PMPs that may not be selected; MSB=>MPM7, LSB=>PMP0
+core.pmc.otp.PMC_disHighPerfAudio 0x009b 0 1 0 OTP handle for disabling high-performance audio HW settings (int1_rscale_low="1", lf_bias_scale="11") in any PMP
+core.pmc.otp.mute_signal_gate 0x009b 1 1 1 High to let audio signal activity detector power down amplifier if no/low signal
+core.pmc.otp.mute_signal_the_hyst 0x009b 2 4 4 Hysteresis for wake-up from power-down
+core.pmc.otp.dmy_data0 0x009b 6 2 0 Dummy (filler) data.
+core.pmc.otp.PMC_nDavg_nom 0x009c 0 5 4 Number of duty cycle averages for max. switching frequency (pwmFreqMode = "00")
+core.pmc.otp.dmy_data1 0x009c 5 3 0 Dummy (filler) data.
+core.pmc.reg.PMP6.PMcfg0_idx 0x009d 0 4 4 4b. PowerMode 0 settings pointer.
+core.pmc.reg.PMP6.PMcfg1_idx 0x009d 4 4 4 4b. PowerMode 1 settings pointer.
+core.pmc.reg.PMP6.PMcfg2_idx 0x009e 0 4 5 4b. PowerMode 2 settings pointer.
+core.pmc.reg.PMP6.PMcfg3_idx 0x009e 4 4 6 4b. PowerMode 3 settings pointer.
+core.pmc.reg.PMP6.PMcfg_lowPvdd_idx 0x009f 0 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.reg.PMP6.PMcfg_lowPvddT_idx 0x009f 2 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.reg.PMP6.PM_max 0x009f 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.reg.PMP6.PM_min 0x009f 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.reg.PMP6.lf_int1_rscale_low 0x00a0 0 1 0 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.reg.PMP6.lf_bias_scale 0x00a0 1 2 1 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.reg.PMP6.lf_int3_c_scale 0x00a0 3 2 3 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.reg.PMP6.lf_gain_fwd 0x00a0 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.reg.PMP7.PMcfg0_idx 0x00a2 0 4 4 4b. PowerMode 0 settings pointer.
+core.pmc.reg.PMP7.PMcfg1_idx 0x00a2 4 4 4 4b. PowerMode 1 settings pointer.
+core.pmc.reg.PMP7.PMcfg2_idx 0x00a3 0 4 5 4b. PowerMode 2 settings pointer.
+core.pmc.reg.PMP7.PMcfg3_idx 0x00a3 4 4 6 4b. PowerMode 3 settings pointer.
+core.pmc.reg.PMP7.PMcfg_lowPvdd_idx 0x00a4 0 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 5)
+core.pmc.reg.PMP7.PMcfg_lowPvddT_idx 0x00a4 2 2 1 2b. Pointer to settings for PowerMode for low-Pvdd operation (PowerMode 6)
+core.pmc.reg.PMP7.PM_max 0x00a4 4 2 3 2b.  Max. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.reg.PMP7.PM_min 0x00a4 6 2 1 2b.  Min. PowerMode (among PM0-3) to be used by auto-PM selector
+core.pmc.reg.PMP7.lf_int1_rscale_low 0x00a5 0 1 0 1b. Resistance/impedance level of DAC-LF interface. 1 => low-noise.
+core.pmc.reg.PMP7.lf_bias_scale 0x00a5 1 2 1 2b. Loop filter bias setting; 0 => low-bias, 1 => mid-bias, 2,3 => high-bias (low-noise)
+core.pmc.reg.PMP7.lf_int3_c_scale 0x00a5 3 2 3 2b. Loop filter integrator 3 time constant tuning handle. "00" => fast (least stable), "11" => normal/slow.
+core.pmc.reg.PMP7.lf_gain_fwd 0x00a5 5 3 4 3b. Loop filter forward gain setting. "100" = nominal/middle.
+core.pmc.reg.PM_man_force0 0x00a7 0 1 0 1b. High to force manually selected PM on channel 0
+core.pmc.reg.PM_man_force1 0x00a7 1 1 0 1b. High to force manually selected PM on channel 1
+core.pmc.reg.PM_sel_man0 0x00a7 2 3 0 2b. Channel 0 manually selected PM, used if PM_man_force0 is high.
+core.pmc.reg.PM_sel_man1 0x00a7 5 3 0 2b. Channel 1 manually selected PM, used if PM_man_force1 is high.
+core.pmc.PMP_selected 0x00a8 0 3 0 Currently selected Power Mode Profile (PMP)
+core.pmc.PM_ch0 0x00a9 0 3 0 Current selected Power Mode for channel 0
+core.pmc.PM_ch1 0x00a9 3 3 0 Current selected Power Mode for channel 1
+core.pmc.Mdetector_ch0 0x00aa 0 8 0 Channel 0 modulation index detector output; M=0...255; 0=>0.0, 255=>1.0
+core.pmc.Mdetector_ch1 0x00ab 0 8 0 Channel 1 modulation index detector output; M=0...255; 0=>0.0, 255=>1.0
+core.pmc.otp.PMP0.audio_dither_lvl 0x0070 0 4 13 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.otp.PMP1.audio_dither_lvl 0x0075 0 4 13 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.otp.PMP2.audio_dither_lvl 0x007a 0 4 8 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.otp.PMP3.audio_dither_lvl 0x007f 0 4 8 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.otp.PMP4.audio_dither_lvl 0x0084 0 4 0 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.otp.PMP5.audio_dither_lvl 0x0089 0 4 0 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.reg.PMP6.audio_dither_lvl 0x00a1 0 4 0 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.reg.PMP7.audio_dither_lvl 0x00a6 0 4 0 4b.  Pre-DAC digital audio dither level. "0000" => no dither
+core.pmc.pm_cfg.0.bal_rate 0x0032 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.0.bal_reset_dis 0x0032 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.0.pm_spare_bit 0x0032 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.1.bal_rate 0x0035 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.1.bal_reset_dis 0x0035 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.1.pm_spare_bit 0x0035 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.2.bal_rate 0x0038 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.2.bal_reset_dis 0x0038 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.2.pm_spare_bit 0x0038 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.3.bal_rate 0x003b 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.3.bal_reset_dis 0x003b 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.3.pm_spare_bit 0x003b 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.4.bal_rate 0x003e 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.4.bal_reset_dis 0x003e 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.4.pm_spare_bit 0x003e 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.5.bal_rate 0x0041 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.5.bal_reset_dis 0x0041 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.5.pm_spare_bit 0x0041 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.6.bal_rate 0x0044 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.6.bal_reset_dis 0x0044 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.6.pm_spare_bit 0x0044 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.7.bal_rate 0x0047 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.7.bal_reset_dis 0x0047 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.7.pm_spare_bit 0x0047 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.8.bal_rate 0x004a 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.8.bal_reset_dis 0x004a 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.8.pm_spare_bit 0x004a 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.9.bal_rate 0x004d 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.9.bal_reset_dis 0x004d 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.9.pm_spare_bit 0x004d 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.10.bal_rate 0x0050 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.10.bal_reset_dis 0x0050 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.10.pm_spare_bit 0x0050 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.11.bal_rate 0x0053 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.11.bal_reset_dis 0x0053 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.11.pm_spare_bit 0x0053 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.12.bal_rate 0x0056 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.12.bal_reset_dis 0x0056 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.12.pm_spare_bit 0x0056 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.13.bal_rate 0x0059 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.13.bal_reset_dis 0x0059 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.13.pm_spare_bit 0x0059 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.14.bal_rate 0x005c 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.14.bal_reset_dis 0x005c 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.14.pm_spare_bit 0x005c 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.15.bal_rate 0x005f 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.15.bal_reset_dis 0x005f 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.15.pm_spare_bit 0x005f 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.16.bal_rate 0x0062 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.16.bal_reset_dis 0x0062 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.16.pm_spare_bit 0x0062 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.17.bal_rate 0x0065 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.17.bal_reset_dis 0x0065 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.17.pm_spare_bit 0x0065 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.18.bal_rate 0x0068 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.18.bal_reset_dis 0x0068 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.18.pm_spare_bit 0x0068 3 1 0 Single bit for experiemental setting
+core.pmc.pm_cfg.19.bal_rate 0x006b 0 2 0 Vcfly balancing event rate for duty cycled control. "11" => always, "10" => 128kHz, "01" => 64kHz, "00" => 32kHz
+core.pmc.pm_cfg.19.bal_reset_dis 0x006b 2 1 0 Experimental Vcfly balancing HW reset-phase usage control. Default (per analog design) = '1'.
+core.pmc.pm_cfg.19.pm_spare_bit 0x006b 3 1 0 Single bit for experiemental setting
+core.prot_sys.otp.gd_ocp_ithr 0x00c0 1 4 11 Power stage over-current protection limit level setting
+core.prot_sys.otp.ocp_sev_tbase 0x00c0 5 3 4 Time base for severe-OCP scanner
+core.prot_sys.otp.ocp_sev_thr 0x00c1 0 8 32 Counting limit for severe-OCP event generator
+core.prot_sys.otp.ocp_sev_dec_rate 0x00c2 0 4 8 Zero-event count per severe-OCP counter decrement step.:
+core.prot_sys.otp.clip_sev_tbase 0x00c3 0 3 4 Time base for severe-clip ("stuck") scanner
+core.prot_sys.otp.clip_sev_dec_rate 0x00c3 3 4 1 Zero-event counts per severe-clip counter decrement step.
+core.prot_sys.otp.clip_sev_thr 0x00c4 0 8 32 Counting limit for severe-clip event generator
+core.prot_sys.otp.ote_thr__0 0x00c5 0 8 0 Overtemperature error threshold (ADC output referred)
+core.prot_sys.otp.ote_thr__1 0x00c6 0 8 63 Overtemperature error threshold (ADC output referred)
+core.prot_sys.otp.otw_thr__0 0x00c7 0 8 0 Overtemperature warning threshold (ADC output referred)
+core.prot_sys.otp.otw_thr__1 0x00c8 0 8 59 Overtemperature warning threshold (ADC output referred)
+core.prot_sys.otp.ote_thr_c 0x00c9 0 8 125 Overtemperature error threshold (in degrees C)
+core.prot_sys.otp.otw_thr_c 0x00ca 0 8 115 Overtemperature warning threshold (in degrees C)
+core.prot_sys.otp.ot_thr_hyst__0 0x00cb 0 8 64 Overtemperature wanrning and error hysteresis
+core.prot_sys.otp.ot_thr_hyst__1 0x00cc 0 8 0 Overtemperature wanrning and error hysteresis
+core.prot_sys.otp.clip_countThr 0x00cd 0 4 3 "Clip stuck" protection count threshold (10ms per step)
+core.prot_sys.otp.Pvdd_low_thr__0 0x00ce 0 8 0 Low-Pvdd warning treshold (ADC output referred)
+core.prot_sys.otp.Pvdd_low_thr__1 0x00cf 0 8 14 Low-Pvdd warning treshold (ADC output referred)
+core.prot_sys.otp.Pvdd_low_thr_hyst__0 0x00d0 0 8 0 Low-Pvdd warning treshold hysteresis (ADC output referred)
+core.prot_sys.otp.Pvdd_low_thr_hyst__1 0x00d1 0 8 12 Low-Pvdd warning treshold hysteresis (ADC output referred)
+core.prot_sys.otp.ltw_thr__0 0x00d2 0 8 0 Low-temperature warning threshold (ADC output referred)
+core.prot_sys.otp.ltw_thr__1 0x00d3 0 8 10 Low-temperature warning threshold (ADC output referred)
+core.prot_sys.otp.lt_thr_hyst__0 0x00d4 0 8 0 Low-temperature warning threshold hysteresis (ADC output referred)
+core.prot_sys.otp.lt_thr_hyst__1 0x00d5 0 8 8 Low-temperature warning threshold hysteresis (ADC output referred)
+core.prot_sys.otp.countThr_short 0x00d6 0 8 16 Number of 10us cycles in a "short" event response
+core.prot_sys.otp.countThr_long 0x00d7 0 8 32 Number of 1ms cycles in a "long" event response
+core.prot_sys.otp.countThr_unlatch 0x00d8 0 8 10 Number of 100ms cycles before a latch auto-reset is performed
+core.prot_sys.reg.ocp_action.prt_rsp_ch.reduceVol 0x00d9 0 1 0 Trigger reduction of channel volume on error
+core.prot_sys.reg.ocp_action.prt_rsp_ch.mute_short 0x00d9 1 1 0 Trigger mute of channel while error w/ short extension
+core.prot_sys.reg.ocp_action.prt_rsp_ch.pchg_short 0x00d9 2 1 1 Trigger Vcfly precharge in half bridge while error (with "short" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_ch.pchg_long 0x00d9 3 1 0 Trigger Vcfly precharge in half bridge while error (with "long" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_ch.ser_rapidFire_short 0x00d9 4 1 1 Trigger rapid update of all channel gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_ch.gd_dp_cont_short 0x00d9 5 1 0 Trigger continuous operation of gate driver level shifters in channel (with "short" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_ch.dis_lf_clip_rec_short 0x00d9 6 1 1 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_ch.powerMode_max 0x00d9 7 1 1 Trigger jump to max. power mode for channel
+core.prot_sys.reg.ocp_action.prt_rsp_ch.dsp_custom_action0 0x00da 0 1 0 Trigger DSP channel-action flag 0
+core.prot_sys.reg.ocp_action.prt_rsp_ch.dsp_custom_action1 0x00da 1 1 0 Trigger DSP channel-action flag 1
+core.prot_sys.reg.ocp_action.prt_rsp_ch.dsp_custom_action2 0x00da 2 1 0 Trigger DSP channel-action flag 2
+core.prot_sys.reg.ocp_action.prt_rsp_ch.dsp_custom_action3 0x00da 3 1 0 Trigger DSP channel-action flag 3
+core.prot_sys.reg.ocp_action.prt_rsp_all.reduceVol 0x00db 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.ocp_action.prt_rsp_all.mute_short 0x00db 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.ocp_action.prt_rsp_all.ser_rapidFire_short 0x00db 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_all.gd_dp_cont_short 0x00db 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_all.dis_lf_clip_rec_short 0x00db 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_all.lowPvddMode_long 0x00db 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_all.lowTmode_long 0x00db 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_all.lowPvddTmode_long 0x00db 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ocp_action.prt_rsp_all.all_dsp_custom_action0 0x00dc 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.ocp_action.prt_rsp_all.all_dsp_custom_action1 0x00dc 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.ocp_action.prt_rsp_all.all_dsp_custom_action2 0x00dc 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.ocp_action.prt_rsp_all.all_dsp_custom_action3 0x00dc 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.reduceVol 0x00dd 0 1 1 Trigger reduction of channel volume on error
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.mute_short 0x00dd 1 1 0 Trigger mute of channel while error w/ short extension
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.pchg_short 0x00dd 2 1 1 Trigger Vcfly precharge in half bridge while error (with "short" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.pchg_long 0x00dd 3 1 0 Trigger Vcfly precharge in half bridge while error (with "long" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.ser_rapidFire_short 0x00dd 4 1 0 Trigger rapid update of all channel gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.gd_dp_cont_short 0x00dd 5 1 0 Trigger continuous operation of gate driver level shifters in channel (with "short" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.dis_lf_clip_rec_short 0x00dd 6 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.powerMode_max 0x00dd 7 1 1 Trigger jump to max. power mode for channel
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.dsp_custom_action0 0x00de 0 1 0 Trigger DSP channel-action flag 0
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.dsp_custom_action1 0x00de 1 1 0 Trigger DSP channel-action flag 1
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.dsp_custom_action2 0x00de 2 1 0 Trigger DSP channel-action flag 2
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.dsp_custom_action3 0x00de 3 1 0 Trigger DSP channel-action flag 3
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.reduceVol 0x00df 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.mute_short 0x00df 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.ser_rapidFire_short 0x00df 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.gd_dp_cont_short 0x00df 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.dis_lf_clip_rec_short 0x00df 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.lowPvddMode_long 0x00df 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.lowTmode_long 0x00df 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.lowPvddTmode_long 0x00df 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.all_dsp_custom_action0 0x00e0 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.all_dsp_custom_action1 0x00e0 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.all_dsp_custom_action2 0x00e0 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.all_dsp_custom_action3 0x00e0 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.reduceVol 0x00e1 0 1 0 Trigger reduction of channel volume on error
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.mute_short 0x00e1 1 1 1 Trigger mute of channel while error w/ short extension
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.pchg_short 0x00e1 2 1 0 Trigger Vcfly precharge in half bridge while error (with "short" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.pchg_long 0x00e1 3 1 1 Trigger Vcfly precharge in half bridge while error (with "long" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.ser_rapidFire_short 0x00e1 4 1 0 Trigger rapid update of all channel gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.gd_dp_cont_short 0x00e1 5 1 0 Trigger continuous operation of gate driver level shifters in channel (with "short" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.dis_lf_clip_rec_short 0x00e1 6 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.powerMode_max 0x00e1 7 1 0 Trigger jump to max. power mode for channel
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.dsp_custom_action0 0x00e2 0 1 0 Trigger DSP channel-action flag 0
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.dsp_custom_action1 0x00e2 1 1 0 Trigger DSP channel-action flag 1
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.dsp_custom_action2 0x00e2 2 1 0 Trigger DSP channel-action flag 2
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.dsp_custom_action3 0x00e2 3 1 0 Trigger DSP channel-action flag 3
+core.prot_sys.reg.vcfp_action.prt_rsp_all.reduceVol 0x00e3 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.vcfp_action.prt_rsp_all.mute_short 0x00e3 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.vcfp_action.prt_rsp_all.ser_rapidFire_short 0x00e3 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_all.gd_dp_cont_short 0x00e3 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_all.dis_lf_clip_rec_short 0x00e3 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_all.lowPvddMode_long 0x00e3 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_all.lowTmode_long 0x00e3 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_all.lowPvddTmode_long 0x00e3 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.vcfp_action.prt_rsp_all.all_dsp_custom_action0 0x00e4 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.vcfp_action.prt_rsp_all.all_dsp_custom_action1 0x00e4 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.vcfp_action.prt_rsp_all.all_dsp_custom_action2 0x00e4 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.vcfp_action.prt_rsp_all.all_dsp_custom_action3 0x00e4 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.dc_action.prt_rsp_ch.reduceVol 0x00e5 0 1 0 Trigger reduction of channel volume on error
+core.prot_sys.reg.dc_action.prt_rsp_ch.mute_short 0x00e5 1 1 0 Trigger mute of channel while error w/ short extension
+core.prot_sys.reg.dc_action.prt_rsp_ch.pchg_short 0x00e5 2 1 0 Trigger Vcfly precharge in half bridge while error (with "short" extension)
+core.prot_sys.reg.dc_action.prt_rsp_ch.pchg_long 0x00e5 3 1 0 Trigger Vcfly precharge in half bridge while error (with "long" extension)
+core.prot_sys.reg.dc_action.prt_rsp_ch.ser_rapidFire_short 0x00e5 4 1 0 Trigger rapid update of all channel gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.dc_action.prt_rsp_ch.gd_dp_cont_short 0x00e5 5 1 0 Trigger continuous operation of gate driver level shifters in channel (with "short" extension)
+core.prot_sys.reg.dc_action.prt_rsp_ch.dis_lf_clip_rec_short 0x00e5 6 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.dc_action.prt_rsp_ch.powerMode_max 0x00e5 7 1 0 Trigger jump to max. power mode for channel
+core.prot_sys.reg.dc_action.prt_rsp_ch.dsp_custom_action0 0x00e6 0 1 0 Trigger DSP channel-action flag 0
+core.prot_sys.reg.dc_action.prt_rsp_ch.dsp_custom_action1 0x00e6 1 1 0 Trigger DSP channel-action flag 1
+core.prot_sys.reg.dc_action.prt_rsp_ch.dsp_custom_action2 0x00e6 2 1 0 Trigger DSP channel-action flag 2
+core.prot_sys.reg.dc_action.prt_rsp_ch.dsp_custom_action3 0x00e6 3 1 0 Trigger DSP channel-action flag 3
+core.prot_sys.reg.dc_action.prt_rsp_all.reduceVol 0x00e7 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.dc_action.prt_rsp_all.mute_short 0x00e7 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.dc_action.prt_rsp_all.ser_rapidFire_short 0x00e7 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.dc_action.prt_rsp_all.gd_dp_cont_short 0x00e7 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.dc_action.prt_rsp_all.dis_lf_clip_rec_short 0x00e7 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.dc_action.prt_rsp_all.lowPvddMode_long 0x00e7 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dc_action.prt_rsp_all.lowTmode_long 0x00e7 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dc_action.prt_rsp_all.lowPvddTmode_long 0x00e7 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dc_action.prt_rsp_all.all_dsp_custom_action0 0x00e8 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.dc_action.prt_rsp_all.all_dsp_custom_action1 0x00e8 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.dc_action.prt_rsp_all.all_dsp_custom_action2 0x00e8 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.dc_action.prt_rsp_all.all_dsp_custom_action3 0x00e8 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.reduceVol 0x00e9 0 1 0 Trigger reduction of channel volume on error
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.mute_short 0x00e9 1 1 0 Trigger mute of channel while error w/ short extension
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.pchg_short 0x00e9 2 1 0 Trigger Vcfly precharge in half bridge while error (with "short" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.pchg_long 0x00e9 3 1 0 Trigger Vcfly precharge in half bridge while error (with "long" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.ser_rapidFire_short 0x00e9 4 1 0 Trigger rapid update of all channel gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.gd_dp_cont_short 0x00e9 5 1 0 Trigger continuous operation of gate driver level shifters in channel (with "short" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.dis_lf_clip_rec_short 0x00e9 6 1 1 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.powerMode_max 0x00e9 7 1 0 Trigger jump to max. power mode for channel
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.dsp_custom_action0 0x00ea 0 1 0 Trigger DSP channel-action flag 0
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.dsp_custom_action1 0x00ea 1 1 0 Trigger DSP channel-action flag 1
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.dsp_custom_action2 0x00ea 2 1 0 Trigger DSP channel-action flag 2
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.dsp_custom_action3 0x00ea 3 1 0 Trigger DSP channel-action flag 3
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.reduceVol 0x00eb 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.mute_short 0x00eb 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.ser_rapidFire_short 0x00eb 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.gd_dp_cont_short 0x00eb 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.dis_lf_clip_rec_short 0x00eb 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.lowPvddMode_long 0x00eb 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.lowTmode_long 0x00eb 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.lowPvddTmode_long 0x00eb 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.all_dsp_custom_action0 0x00ec 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.all_dsp_custom_action1 0x00ec 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.all_dsp_custom_action2 0x00ec 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.all_dsp_custom_action3 0x00ec 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.otw_action.reduceVol 0x00ed 0 1 1 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.otw_action.mute_short 0x00ed 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.otw_action.ser_rapidFire_short 0x00ed 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.otw_action.gd_dp_cont_short 0x00ed 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.otw_action.dis_lf_clip_rec_short 0x00ed 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.otw_action.lowPvddMode_long 0x00ed 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.otw_action.lowTmode_long 0x00ed 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.otw_action.lowPvddTmode_long 0x00ed 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.otw_action.all_dsp_custom_action0 0x00ee 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.otw_action.all_dsp_custom_action1 0x00ee 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.otw_action.all_dsp_custom_action2 0x00ee 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.otw_action.all_dsp_custom_action3 0x00ee 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.ote_action.reduceVol 0x00ef 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.ote_action.mute_short 0x00ef 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.ote_action.ser_rapidFire_short 0x00ef 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.ote_action.gd_dp_cont_short 0x00ef 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.ote_action.dis_lf_clip_rec_short 0x00ef 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.ote_action.lowPvddMode_long 0x00ef 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ote_action.lowTmode_long 0x00ef 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ote_action.lowPvddTmode_long 0x00ef 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.ote_action.all_dsp_custom_action0 0x00f0 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.ote_action.all_dsp_custom_action1 0x00f0 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.ote_action.all_dsp_custom_action2 0x00f0 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.ote_action.all_dsp_custom_action3 0x00f0 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.pvdd_uv_action.reduceVol 0x00f1 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.pvdd_uv_action.mute_short 0x00f1 1 1 1 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.pvdd_uv_action.ser_rapidFire_short 0x00f1 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.pvdd_uv_action.gd_dp_cont_short 0x00f1 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.pvdd_uv_action.dis_lf_clip_rec_short 0x00f1 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.pvdd_uv_action.lowPvddMode_long 0x00f1 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_uv_action.lowTmode_long 0x00f1 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_uv_action.lowPvddTmode_long 0x00f1 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_uv_action.all_dsp_custom_action0 0x00f2 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.pvdd_uv_action.all_dsp_custom_action1 0x00f2 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.pvdd_uv_action.all_dsp_custom_action2 0x00f2 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.pvdd_uv_action.all_dsp_custom_action3 0x00f2 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.pvdd_low_action.reduceVol 0x00f3 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.pvdd_low_action.mute_short 0x00f3 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.pvdd_low_action.ser_rapidFire_short 0x00f3 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.pvdd_low_action.gd_dp_cont_short 0x00f3 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.pvdd_low_action.dis_lf_clip_rec_short 0x00f3 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.pvdd_low_action.lowPvddMode_long 0x00f3 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_low_action.lowTmode_long 0x00f3 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_low_action.lowPvddTmode_long 0x00f3 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_low_action.all_dsp_custom_action0 0x00f4 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.pvdd_low_action.all_dsp_custom_action1 0x00f4 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.pvdd_low_action.all_dsp_custom_action2 0x00f4 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.pvdd_low_action.all_dsp_custom_action3 0x00f4 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.pvdd_ov_action.reduceVol 0x00f5 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.pvdd_ov_action.mute_short 0x00f5 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.pvdd_ov_action.ser_rapidFire_short 0x00f5 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.pvdd_ov_action.gd_dp_cont_short 0x00f5 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.pvdd_ov_action.dis_lf_clip_rec_short 0x00f5 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.pvdd_ov_action.lowPvddMode_long 0x00f5 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_ov_action.lowTmode_long 0x00f5 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_ov_action.lowPvddTmode_long 0x00f5 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvdd_ov_action.all_dsp_custom_action0 0x00f6 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.pvdd_ov_action.all_dsp_custom_action1 0x00f6 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.pvdd_ov_action.all_dsp_custom_action2 0x00f6 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.pvdd_ov_action.all_dsp_custom_action3 0x00f6 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.no_clock_action.reduceVol 0x00f7 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.no_clock_action.mute_short 0x00f7 1 1 1 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.no_clock_action.ser_rapidFire_short 0x00f7 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.no_clock_action.gd_dp_cont_short 0x00f7 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.no_clock_action.dis_lf_clip_rec_short 0x00f7 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.no_clock_action.lowPvddMode_long 0x00f7 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.no_clock_action.lowTmode_long 0x00f7 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.no_clock_action.lowPvddTmode_long 0x00f7 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.no_clock_action.all_dsp_custom_action0 0x00f8 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.no_clock_action.all_dsp_custom_action1 0x00f8 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.no_clock_action.all_dsp_custom_action2 0x00f8 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.no_clock_action.all_dsp_custom_action3 0x00f8 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.no_audio_action.reduceVol 0x00f9 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.no_audio_action.mute_short 0x00f9 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.no_audio_action.ser_rapidFire_short 0x00f9 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.no_audio_action.gd_dp_cont_short 0x00f9 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.no_audio_action.dis_lf_clip_rec_short 0x00f9 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.no_audio_action.lowPvddMode_long 0x00f9 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.no_audio_action.lowTmode_long 0x00f9 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.no_audio_action.lowPvddTmode_long 0x00f9 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.no_audio_action.all_dsp_custom_action0 0x00fa 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.no_audio_action.all_dsp_custom_action1 0x00fa 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.no_audio_action.all_dsp_custom_action2 0x00fa 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.no_audio_action.all_dsp_custom_action3 0x00fa 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.temp_low_action.reduceVol 0x00fb 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.temp_low_action.mute_short 0x00fb 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.temp_low_action.ser_rapidFire_short 0x00fb 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.temp_low_action.gd_dp_cont_short 0x00fb 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.temp_low_action.dis_lf_clip_rec_short 0x00fb 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.temp_low_action.lowPvddMode_long 0x00fb 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.temp_low_action.lowTmode_long 0x00fb 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.temp_low_action.lowPvddTmode_long 0x00fb 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.temp_low_action.all_dsp_custom_action0 0x00fc 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.temp_low_action.all_dsp_custom_action1 0x00fc 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.temp_low_action.all_dsp_custom_action2 0x00fc 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.temp_low_action.all_dsp_custom_action3 0x00fc 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.pvddT_low_action.reduceVol 0x00fd 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.pvddT_low_action.mute_short 0x00fd 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.pvddT_low_action.ser_rapidFire_short 0x00fd 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.pvddT_low_action.gd_dp_cont_short 0x00fd 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.pvddT_low_action.dis_lf_clip_rec_short 0x00fd 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.pvddT_low_action.lowPvddMode_long 0x00fd 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvddT_low_action.lowTmode_long 0x00fd 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvddT_low_action.lowPvddTmode_long 0x00fd 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.pvddT_low_action.all_dsp_custom_action0 0x00fe 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.pvddT_low_action.all_dsp_custom_action1 0x00fe 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.pvddT_low_action.all_dsp_custom_action2 0x00fe 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.pvddT_low_action.all_dsp_custom_action3 0x00fe 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.errTrig_en 0x0109 0 1 0 High to enable error triger (debug) function
+core.prot_sys.reg.errTrig_reset 0x0109 1 1 0 High to trigger a single reset of error trigger
+core.prot_sys.reg.errVect_trig_mask.errVector_ch0 0x010a 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp] <-- clip_stuck is hidden
+core.prot_sys.reg.errVect_trig_mask.errVector_ch1 0x010b 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp]
+core.prot_sys.reg.errVect_trig_mask.errVector_all__0 0x010c 0 8 0 13					  12             11            10             9            8
+core.prot_sys.reg.errVect_trig_mask.errVector_all__1 0x010d 0 6 0 13					  12             11            10             9            8
+core.prot_sys.reg.errLatch_reset 0x010e 0 1 0 Low->high fires single errorLatch unlock event (both channels at once)
+core.prot_sys.errVect_now.errVector_ch0 0x0118 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp] <-- clip_stuck is hidden
+core.prot_sys.errVect_now.errVector_ch1 0x0119 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp]
+core.prot_sys.errVect_now.errVector_all__0 0x011a 0 8 0 13					  12             11            10             9            8
+core.prot_sys.errVect_now.errVector_all__1 0x011b 0 6 0 13					  12             11            10             9            8
+core.prot_sys.errVect_acc.errVector_ch0 0x011c 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp] <-- clip_stuck is hidden
+core.prot_sys.errVect_acc.errVector_ch1 0x011d 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp]
+core.prot_sys.errVect_acc.errVector_all__0 0x011e 0 8 0 13					  12             11            10             9            8
+core.prot_sys.errVect_acc.errVector_all__1 0x011f 0 6 0 13					  12             11            10             9            8
+core.prot_sys.errVect_acc_trig.errVector_ch0 0x0120 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp] <-- clip_stuck is hidden
+core.prot_sys.errVect_acc_trig.errVector_ch1 0x0121 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp]
+core.prot_sys.errVect_acc_trig.errVector_all__0 0x0122 0 8 0 13					  12             11            10             9            8
+core.prot_sys.errVect_acc_trig.errVector_all__1 0x0123 0 6 0 13					  12             11            10             9            8
+core.prot_sys.errVect_trig.errVector_ch0 0x0124 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp] <-- clip_stuck is hidden
+core.prot_sys.errVect_trig.errVector_ch1 0x0125 0 5 0 [clip_stuck  dc  vcf_err  ocp_severe  ocp]
+core.prot_sys.errVect_trig.errVector_all__0 0x0126 0 8 0 13					  12             11            10             9            8
+core.prot_sys.errVect_trig.errVector_all__1 0x0127 0 6 0 13					  12             11            10             9            8
+core.prot_sys.errTrig_trigged 0x0128 0 1 0 High if error trigger system has triggered (**hidden**)
+core.prot_sys.errLatch_state0 0x0128 1 1 0 High if ch0 error high-Z latch is active (locked) (**public**)
+core.prot_sys.errLatch_state1 0x0128 2 1 0 High if ch1 error high-Z latch is active (locked) (**public**)
+core.prot_sys.otp.dc_prot_mode_fast 0x00cd 4 1 0 Set high for debug-mode (fast-acting) DC protection.
+core.prot_sys.otp.dc_trip_level 0x00cd 5 3 0 DC protection timeout level
+core.prot_sys.reg.protSys_nErrPin_mask.mask_errNow.errVector_ch0 0x010f 0 5 31 [clip_stuck  dc  vcf_err  ocp_severe  ocp] <-- clip_stuck is hidden
+core.prot_sys.reg.protSys_nErrPin_mask.mask_errNow.errVector_ch1 0x0110 0 5 31 [clip_stuck  dc  vcf_err  ocp_severe  ocp]
+core.prot_sys.reg.protSys_nErrPin_mask.mask_errNow.errVector_all__0 0x0111 0 8 119 13					  12             11            10             9            8
+core.prot_sys.reg.protSys_nErrPin_mask.mask_errNow.errVector_all__1 0x0112 0 6 0 13					  12             11            10             9            8
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_pchg_en 0x0113 0 1 0 High to enable Cfly precharge resistors in channel
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_gd_ser_rapidFire 0x0113 1 1 0 High to channel gate driver serial links
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_reduceVol 0x0113 3 1 0 High to request a channel volume reduction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_mute 0x0113 4 1 1 High to force channel mute
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_gd_dp_cont_force 0x0113 5 1 0 High to force continuous gate driver level shifter signaling for channel
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_dis_lf_clip_rec 0x0113 6 1 0 High to force off channel clip recovery (in loop filter)
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_powerMode_max 0x0113 7 1 0 High to for max. Power Mode for channel
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_dsp_custom_action0 0x0114 0 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_dsp_custom_action1 0x0114 1 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_dsp_custom_action2 0x0114 2 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_dsp_custom_action3 0x0114 3 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_all.lowPvddMode 0x0115 0 1 0 High to force chip to enter "low-Pvdd" operation
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_all.lowTmode 0x0115 1 1 0 High to force chip to enter "temp-temperature" operation
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_all.lowPvddTmode 0x0115 2 1 0 High to force chip to enter "low Pvdd and temperature" operation
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_all.all_dsp_custom_action0 0x0115 3 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_all.all_dsp_custom_action1 0x0115 4 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_all.all_dsp_custom_action2 0x0115 5 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_all.all_dsp_custom_action3 0x0115 6 1 0 Custom handle for DSP interaction
+core.prot_sys.reg.dsp_err0_action.reduceVol 0x00ff 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.dsp_err0_action.mute_short 0x00ff 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.dsp_err0_action.ser_rapidFire_short 0x00ff 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.dsp_err0_action.gd_dp_cont_short 0x00ff 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.dsp_err0_action.dis_lf_clip_rec_short 0x00ff 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.dsp_err0_action.lowPvddMode_long 0x00ff 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err0_action.lowTmode_long 0x00ff 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err0_action.lowPvddTmode_long 0x00ff 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err0_action.all_dsp_custom_action0 0x0100 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.dsp_err0_action.all_dsp_custom_action1 0x0100 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.dsp_err0_action.all_dsp_custom_action2 0x0100 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.dsp_err0_action.all_dsp_custom_action3 0x0100 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.dsp_err1_action.reduceVol 0x0101 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.dsp_err1_action.mute_short 0x0101 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.dsp_err1_action.ser_rapidFire_short 0x0101 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.dsp_err1_action.gd_dp_cont_short 0x0101 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.dsp_err1_action.dis_lf_clip_rec_short 0x0101 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.dsp_err1_action.lowPvddMode_long 0x0101 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err1_action.lowTmode_long 0x0101 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err1_action.lowPvddTmode_long 0x0101 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err1_action.all_dsp_custom_action0 0x0102 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.dsp_err1_action.all_dsp_custom_action1 0x0102 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.dsp_err1_action.all_dsp_custom_action2 0x0102 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.dsp_err1_action.all_dsp_custom_action3 0x0102 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.dsp_err2_action.reduceVol 0x0103 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.dsp_err2_action.mute_short 0x0103 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.dsp_err2_action.ser_rapidFire_short 0x0103 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.dsp_err2_action.gd_dp_cont_short 0x0103 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.dsp_err2_action.dis_lf_clip_rec_short 0x0103 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.dsp_err2_action.lowPvddMode_long 0x0103 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err2_action.lowTmode_long 0x0103 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err2_action.lowPvddTmode_long 0x0103 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err2_action.all_dsp_custom_action0 0x0104 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.dsp_err2_action.all_dsp_custom_action1 0x0104 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.dsp_err2_action.all_dsp_custom_action2 0x0104 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.dsp_err2_action.all_dsp_custom_action3 0x0104 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.dsp_err3_action.reduceVol 0x0105 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.dsp_err3_action.mute_short 0x0105 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.dsp_err3_action.ser_rapidFire_short 0x0105 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.dsp_err3_action.gd_dp_cont_short 0x0105 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.dsp_err3_action.dis_lf_clip_rec_short 0x0105 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.dsp_err3_action.lowPvddMode_long 0x0105 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err3_action.lowTmode_long 0x0105 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err3_action.lowPvddTmode_long 0x0105 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.dsp_err3_action.all_dsp_custom_action0 0x0106 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.dsp_err3_action.all_dsp_custom_action1 0x0106 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.dsp_err3_action.all_dsp_custom_action2 0x0106 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.dsp_err3_action.all_dsp_custom_action3 0x0106 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.reg.errTrig_action.reduceVol 0x0107 0 1 0 Trigger volume reduction of all audio channels in chip
+core.prot_sys.reg.errTrig_action.mute_short 0x0107 1 1 0 Trigger mute of all audio channels while error w/ short extension
+core.prot_sys.reg.errTrig_action.ser_rapidFire_short 0x0107 2 1 0 Trigger rapid update of all chip gate driver serial links while error (with "short" extension)
+core.prot_sys.reg.errTrig_action.gd_dp_cont_short 0x0107 3 1 0 Trigger continuous operation of all chip gate driver level shifters (with "short" extension)
+core.prot_sys.reg.errTrig_action.dis_lf_clip_rec_short 0x0107 4 1 0 Trigger disable of loop filter clip recovery in channel (with "short" extension)
+core.prot_sys.reg.errTrig_action.lowPvddMode_long 0x0107 5 1 0 Trigger "low-Pvdd" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.errTrig_action.lowTmode_long 0x0107 6 1 0 Trigger "low temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.errTrig_action.lowPvddTmode_long 0x0107 7 1 0 Trigger "low-Pvdd-and temperature" operation mode of all chip half bridges (with "long" extension)
+core.prot_sys.reg.errTrig_action.all_dsp_custom_action0 0x0108 0 1 0 Trigger DSP chip-action flag 0
+core.prot_sys.reg.errTrig_action.all_dsp_custom_action1 0x0108 1 1 0 Trigger DSP chip-action flag 1
+core.prot_sys.reg.errTrig_action.all_dsp_custom_action2 0x0108 2 1 0 Trigger DSP chip-action flag 2
+core.prot_sys.reg.errTrig_action.all_dsp_custom_action3 0x0108 3 1 0 Trigger DSP chip-action flag 3
+core.prot_sys.errVect_acc_ocp_ch0 0x0129 0 8 0 Channel-0 OCP flag accumulator register			[q3b q2b q1b q0b q3a q2a q1a q0a]
+core.prot_sys.errVect_acc_ocp_ch1 0x012a 0 8 0 Channel-1 OCP flag accumulator register			[q3b q2b q1b q0b q3a q2a q1a q0a]
+core.prot_sys.errVect_trig_ocp_ch0 0x012b 0 8 0 Channel-0 OCP flag trigger-time register			[q3b q2b q1b q0b q3a q2a q1a q0a]
+core.prot_sys.errVect_trig_ocp_ch1 0x012c 0 8 0 Channel-1 OCP flag trigger-time register			[q3b q2b q1b q0b q3a q2a q1a q0a]
+core.prot_sys.errVect_acc_vcf_ch0 0x012d 0 4 0 Channel-0 Vcfly error flag accumulator register		[ov_b uv_b ob_a uv_a]
+core.prot_sys.errVect_acc_vcf_ch1 0x012d 4 4 0 Channel-1 Vcfly error flag accumulator register		[ov_b uv_b ob_a uv_a
+core.prot_sys.errVect_trig_vcf_ch0 0x012e 0 4 0 Channel-0 Vcfly error flag trigger-time register	[ov_b uv_b ob_a uv_a
+core.prot_sys.errVect_trig_vcf_ch1 0x012e 4 4 0 Channel-1 Vcfly error flag trigger-time register	[ov_b uv_b ob_a uv_a
+core.prot_sys.otp.pb_protMode_lowlow 0x00c0 0 1 0 "Protection mode" behavior of power stage; "0"=>high-Z, "1"=>low-low
+core.prot_sys.reg.ocp_action.prt_rsp_ch.pb_prot_short 0x00da 4 1 1 Trigger "short" protection state for all channel half bridges
+core.prot_sys.reg.ocp_action.prt_rsp_ch.pb_prot_long 0x00da 5 1 0 Trigger "long" protection state for all channel half bridges
+core.prot_sys.reg.ocp_action.prt_rsp_ch.pb_prot_latch_semi 0x00da 6 1 0 Trigger latched protection state for channel half bridges, with auto-unlock/re-try
+core.prot_sys.reg.ocp_action.prt_rsp_ch.pb_prot_latch_perma 0x00da 7 1 0 Trigger latched protection state for channel half bridges, with only register-based unlock
+core.prot_sys.reg.ocp_action.prt_rsp_all.pb_prot_latch_semi 0x00dc 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.ocp_action.prt_rsp_all.pb_prot_latch_perma 0x00dc 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.pb_prot_short 0x00de 4 1 0 Trigger "short" protection state for all channel half bridges
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.pb_prot_long 0x00de 5 1 0 Trigger "long" protection state for all channel half bridges
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.pb_prot_latch_semi 0x00de 6 1 1 Trigger latched protection state for channel half bridges, with auto-unlock/re-try
+core.prot_sys.reg.ocp_severe_action.prt_rsp_ch.pb_prot_latch_perma 0x00de 7 1 0 Trigger latched protection state for channel half bridges, with only register-based unlock
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.pb_prot_latch_semi 0x00e0 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.ocp_severe_action.prt_rsp_all.pb_prot_latch_perma 0x00e0 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.pb_prot_short 0x00e2 4 1 0 Trigger "short" protection state for all channel half bridges
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.pb_prot_long 0x00e2 5 1 0 Trigger "long" protection state for all channel half bridges
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.pb_prot_latch_semi 0x00e2 6 1 0 Trigger latched protection state for channel half bridges, with auto-unlock/re-try
+core.prot_sys.reg.vcfp_action.prt_rsp_ch.pb_prot_latch_perma 0x00e2 7 1 0 Trigger latched protection state for channel half bridges, with only register-based unlock
+core.prot_sys.reg.vcfp_action.prt_rsp_all.pb_prot_latch_semi 0x00e4 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.vcfp_action.prt_rsp_all.pb_prot_latch_perma 0x00e4 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.dc_action.prt_rsp_ch.pb_prot_short 0x00e6 4 1 0 Trigger "short" protection state for all channel half bridges
+core.prot_sys.reg.dc_action.prt_rsp_ch.pb_prot_long 0x00e6 5 1 0 Trigger "long" protection state for all channel half bridges
+core.prot_sys.reg.dc_action.prt_rsp_ch.pb_prot_latch_semi 0x00e6 6 1 1 Trigger latched protection state for channel half bridges, with auto-unlock/re-try
+core.prot_sys.reg.dc_action.prt_rsp_ch.pb_prot_latch_perma 0x00e6 7 1 0 Trigger latched protection state for channel half bridges, with only register-based unlock
+core.prot_sys.reg.dc_action.prt_rsp_all.pb_prot_latch_semi 0x00e8 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.dc_action.prt_rsp_all.pb_prot_latch_perma 0x00e8 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.pb_prot_short 0x00ea 4 1 0 Trigger "short" protection state for all channel half bridges
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.pb_prot_long 0x00ea 5 1 0 Trigger "long" protection state for all channel half bridges
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.pb_prot_latch_semi 0x00ea 6 1 0 Trigger latched protection state for channel half bridges, with auto-unlock/re-try
+core.prot_sys.reg.clip_stuck_action.prt_rsp_ch.pb_prot_latch_perma 0x00ea 7 1 0 Trigger latched protection state for channel half bridges, with only register-based unlock
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.pb_prot_latch_semi 0x00ec 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.clip_stuck_action.prt_rsp_all.pb_prot_latch_perma 0x00ec 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.otw_action.pb_prot_latch_semi 0x00ee 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.otw_action.pb_prot_latch_perma 0x00ee 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.ote_action.pb_prot_latch_semi 0x00f0 4 1 1 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.ote_action.pb_prot_latch_perma 0x00f0 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.pvdd_uv_action.pb_prot_latch_semi 0x00f2 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.pvdd_uv_action.pb_prot_latch_perma 0x00f2 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.pvdd_low_action.pb_prot_latch_semi 0x00f4 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.pvdd_low_action.pb_prot_latch_perma 0x00f4 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.pvdd_ov_action.pb_prot_latch_semi 0x00f6 4 1 1 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.pvdd_ov_action.pb_prot_latch_perma 0x00f6 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.no_clock_action.pb_prot_latch_semi 0x00f8 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.no_clock_action.pb_prot_latch_perma 0x00f8 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.no_audio_action.pb_prot_latch_semi 0x00fa 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.no_audio_action.pb_prot_latch_perma 0x00fa 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.temp_low_action.pb_prot_latch_semi 0x00fc 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.temp_low_action.pb_prot_latch_perma 0x00fc 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.pvddT_low_action.pb_prot_latch_semi 0x00fe 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.pvddT_low_action.pb_prot_latch_perma 0x00fe 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.dsp_err0_action.pb_prot_latch_semi 0x0100 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.dsp_err0_action.pb_prot_latch_perma 0x0100 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.dsp_err1_action.pb_prot_latch_semi 0x0102 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.dsp_err1_action.pb_prot_latch_perma 0x0102 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.dsp_err2_action.pb_prot_latch_semi 0x0104 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.dsp_err2_action.pb_prot_latch_perma 0x0104 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.dsp_err3_action.pb_prot_latch_semi 0x0106 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.dsp_err3_action.pb_prot_latch_perma 0x0106 5 1 0 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.errTrig_action.pb_prot_latch_semi 0x0108 4 1 0 Trigger latched high-Z of all chip half bridges, with auto-unlock/re-try
+core.prot_sys.reg.errTrig_action.pb_prot_latch_perma 0x0108 5 1 1 Trigger latched high-Z of all chip half bridges, with only register-based unlock
+core.prot_sys.reg.protSys_nErrPin_mask.mask_act_ch.ch_pb_prot_force 0x0113 2 1 1 High to force protection state for full bridge Q0...7
+core.pa_hw.otp.pa_rtrim 0x0140 0 4 10 Resistor trim code for coutering R*C process variation
+core.pa_hw.otp.afir_vcmo_set 0x0140 4 4 11 AFIR-DAC output common-mode operating point selection
+core.pa_hw.otp.afir_rref_trim 0x0141 0 6 32 AFIR-DAC output current scale fine-trim
+core.pa_hw.otp.pb_dp_len 0x0142 0 2 2 Level shifter pulse length setup
+core.pa_hw.otp.force_dp_cont 0x0142 2 1 0 Level shifter continuous-pulse forcing handle
+core.pa_hw.otp.pwm_pvdd_scale 0x0142 3 3 7 PWM refgen Pvdd_scale. "111" for MA120.
+core.pa_hw.otp.unmute_cnt 0x0143 0 4 3 Unmute-mode delay from release request to actual unmute. 100us/1ms/10ms/100ms per step.
+core.pa_hw.otp.afir_pchg_cnt 0x0143 4 4 4 AFIR startup bias filter precharge duration. 100us per step.
+core.pa_hw.otp.cmctrl_pvddShift 0x0144 0 3 3 Pvdd measurement scaling factor for DAC CM control machine.
+core.pa_hw.otp.cmCtrlProfs.0.dac_use_cmtrl 0x0145 0 1 1 High to enable active, continuous-time common-mode controller
+core.pa_hw.otp.cmCtrlProfs.0.dac_use_rcmpu 0x0145 1 1 0 High to enable passive Pvdd-pullup resistor bank
+core.pa_hw.otp.cmCtrlProfs.0.rcmpu_highR 0x0145 2 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 0)
+core.pa_hw.otp.cmCtrlProfs.0.rcmpu_lowR 0x0145 5 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 1)
+core.pa_hw.otp.cmCtrlProfs.0.sdm_d_thres 0x0146 0 4 3 PWM-SDM output duty cycle setting where 3-level and 2-level operation intersect, if dac_ternary_en	= 1.
+core.pa_hw.otp.cmCtrlProfs.0.sdm_d_cm_fxd 0x0146 4 4 8 Fixed PWM-SDM output common-mode level setting if dac_use_cmadj = 0.
+core.pa_hw.otp.cmCtrlProfs.0.cmadj_k0_highR 0x0147 0 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 0).
+core.pa_hw.otp.cmCtrlProfs.0.cmadj_k0_lowR 0x0147 4 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 1).
+core.pa_hw.otp.cmCtrlProfs.0.cmadj_k1 0x0148 0 6 0 Pvdd-prop. factor for calc of d_cm for dac_use_cmadj = 1.
+core.pa_hw.otp.cmCtrlProfs.0.dac_ternary_en 0x0148 6 1 1 High to use ternary-mode AFIR.
+core.pa_hw.otp.cmCtrlProfs.0.dac_use_cmadj 0x0148 7 1 1 High to use Pvdd-based control of AFIR CM current level.
+core.pa_hw.otp.cmCtrlProfs.1.dac_use_cmtrl 0x0149 0 1 0 High to enable active, continuous-time common-mode controller
+core.pa_hw.otp.cmCtrlProfs.1.dac_use_rcmpu 0x0149 1 1 0 High to enable passive Pvdd-pullup resistor bank
+core.pa_hw.otp.cmCtrlProfs.1.rcmpu_highR 0x0149 2 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 0)
+core.pa_hw.otp.cmCtrlProfs.1.rcmpu_lowR 0x0149 5 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 1)
+core.pa_hw.otp.cmCtrlProfs.1.sdm_d_thres 0x014a 0 4 0 PWM-SDM output duty cycle setting where 3-level and 2-level operation intersect, if dac_ternary_en	= 1.
+core.pa_hw.otp.cmCtrlProfs.1.sdm_d_cm_fxd 0x014a 4 4 8 Fixed PWM-SDM output common-mode level setting if dac_use_cmadj = 0.
+core.pa_hw.otp.cmCtrlProfs.1.cmadj_k0_highR 0x014b 0 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 0).
+core.pa_hw.otp.cmCtrlProfs.1.cmadj_k0_lowR 0x014b 4 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 1).
+core.pa_hw.otp.cmCtrlProfs.1.cmadj_k1 0x014c 0 6 0 Pvdd-prop. factor for calc of d_cm for dac_use_cmadj = 1.
+core.pa_hw.otp.cmCtrlProfs.1.dac_ternary_en 0x014c 6 1 0 High to use ternary-mode AFIR.
+core.pa_hw.otp.cmCtrlProfs.1.dac_use_cmadj 0x014c 7 1 1 High to use Pvdd-based control of AFIR CM current level.
+core.pa_hw.otp.cmCtrlProfs.2.dac_use_cmtrl 0x014d 0 1 0 High to enable active, continuous-time common-mode controller
+core.pa_hw.otp.cmCtrlProfs.2.dac_use_rcmpu 0x014d 1 1 0 High to enable passive Pvdd-pullup resistor bank
+core.pa_hw.otp.cmCtrlProfs.2.rcmpu_highR 0x014d 2 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 0)
+core.pa_hw.otp.cmCtrlProfs.2.rcmpu_lowR 0x014d 5 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 1)
+core.pa_hw.otp.cmCtrlProfs.2.sdm_d_thres 0x014e 0 4 0 PWM-SDM output duty cycle setting where 3-level and 2-level operation intersect, if dac_ternary_en	= 1.
+core.pa_hw.otp.cmCtrlProfs.2.sdm_d_cm_fxd 0x014e 4 4 8 Fixed PWM-SDM output common-mode level setting if dac_use_cmadj = 0.
+core.pa_hw.otp.cmCtrlProfs.2.cmadj_k0_highR 0x014f 0 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 0).
+core.pa_hw.otp.cmCtrlProfs.2.cmadj_k0_lowR 0x014f 4 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 1).
+core.pa_hw.otp.cmCtrlProfs.2.cmadj_k1 0x0150 0 6 0 Pvdd-prop. factor for calc of d_cm for dac_use_cmadj = 1.
+core.pa_hw.otp.cmCtrlProfs.2.dac_ternary_en 0x0150 6 1 0 High to use ternary-mode AFIR.
+core.pa_hw.otp.cmCtrlProfs.2.dac_use_cmadj 0x0150 7 1 1 High to use Pvdd-based control of AFIR CM current level.
+core.pa_hw.otp.cmCtrlProfs.3.dac_use_cmtrl 0x0151 0 1 1 High to enable active, continuous-time common-mode controller
+core.pa_hw.otp.cmCtrlProfs.3.dac_use_rcmpu 0x0151 1 1 0 High to enable passive Pvdd-pullup resistor bank
+core.pa_hw.otp.cmCtrlProfs.3.rcmpu_highR 0x0151 2 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 0)
+core.pa_hw.otp.cmCtrlProfs.3.rcmpu_lowR 0x0151 5 3 0 Pvdd-pullup resistor (if used) setting for high value of int1 FB res. (lf_int1_rscale_low = 1)
+core.pa_hw.otp.cmCtrlProfs.3.sdm_d_thres 0x0152 0 4 2 PWM-SDM output duty cycle setting where 3-level and 2-level operation intersect, if dac_ternary_en	= 1.
+core.pa_hw.otp.cmCtrlProfs.3.sdm_d_cm_fxd 0x0152 4 4 12 Fixed PWM-SDM output common-mode level setting if dac_use_cmadj = 0.
+core.pa_hw.otp.cmCtrlProfs.3.cmadj_k0_highR 0x0153 0 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 0).
+core.pa_hw.otp.cmCtrlProfs.3.cmadj_k0_lowR 0x0153 4 4 0 Constant-part of calculation of Pvdd-based d_cm for dac_use_cmadj = 1. For (lf_int1_rscale_low = 1).
+core.pa_hw.otp.cmCtrlProfs.3.cmadj_k1 0x0154 0 6 0 Pvdd-prop. factor for calc of d_cm for dac_use_cmadj = 1.
+core.pa_hw.otp.cmCtrlProfs.3.dac_ternary_en 0x0154 6 1 1 High to use ternary-mode AFIR.
+core.pa_hw.otp.cmCtrlProfs.3.dac_use_cmadj 0x0154 7 1 1 High to use Pvdd-based control of AFIR CM current level.
+core.pa_hw.reg.gd_test_mode 0x0156 0 4 0 Gate drive "test mode force" vector [b1 a1 b0 a0].
+core.pa_hw.reg.gd_ocp_dis 0x0156 4 4 0 Gate driver "ocp disable" vector    [b1 a1 b0 a0].
+core.pa_hw.reg.gd_test_cfg 0x0157 0 2 0 Gate drive "test mode" configuration.
+core.pa_hw.reg.gd_spare_cfg 0x0157 2 4 0 Gate driver spare config. bits. 		[b1 a1 b0 a0].
+core.pa_hw.reg.afir_pchg_force 0x0157 6 1 0 High to force AFIR bias filter into prechage mode.
+core.pa_hw.reg.OTP_supply_en_force 0x0157 7 1 0 High to force enable for GD refgen, to provide dvdd_5v0 for OTP read.
+core.pa_hw.reg.sw_force_reg0 0x0158 0 1 0 High to force channel 0 switch control vector from register.
+core.pa_hw.reg.sw_force_reg1 0x0158 1 1 0 High to force channel 1 switch control vector from register.
+core.pa_hw.reg.gd_pchg_force 0x0158 2 4 0 Gate driver "force precharge to reg setting" vector [b1 a1 b0 a0];
+core.pa_hw.reg.clip_rec_dis_force0 0x0158 6 1 0 High to force specific register value of ch 0 clip recovery disable bit.
+core.pa_hw.reg.clip_rec_dis_force1 0x0158 7 1 0 High to force specific register value of ch 0 clip recovery disable bit.
+core.pa_hw.reg.sw_a0_reg 0x0159 0 4 0 Channel 0, bridge A switch control vector for "register force".
+core.pa_hw.reg.sw_b0_reg 0x0159 4 4 0 Channel 0, bridge B switch control vector for "register force".
+core.pa_hw.reg.sw_a1_reg 0x015a 0 4 0 Channel 1, bridge A switch control vector for "register force".
+core.pa_hw.reg.sw_b1_reg 0x015a 4 4 0 Channel 1, bridge B switch control vector for "register force".
+core.pa_hw.reg.gd_pchg_reg 0x015b 0 4 0 Gate driver prechage settings vector for reg. force. [b1 a1 b0 a0];
+core.pa_hw.reg.clip_rec_dis_reg0 0x015b 4 1 0 "Register force" value of channel 0 lf_clip_rec_dis bit.
+core.pa_hw.reg.clip_rec_dis_reg1 0x015b 5 1 0 "Register force" value of channel 1 lf_clip_rec_dis bit.
+core.pa_hw.status_ch0 0x015e 0 4 0 
+core.pa_hw.status_ch1 0x015e 4 4 0 
+core.pa_hw.otp.pwmClkDiv_base 0x0155 0 3 2 PA PWM base clock divider; nom. 2 => 4.096MHz base.
+core.pa_hw.otp.cmctrl_hyst 0x0144 3 4 2 Hysteresis in DAC CM control machine
+core.pa_hw.otp.clk_chop_32kHz 0x0155 3 1 0 Low (default) to use 64kHz chop clock, otherwise 32kHz is selected.
+core.pa_hw.reg.afir_force_disable0 0x015c 0 1 0 High to force disable of AFIR in channel 0.
+core.pa_hw.reg.afir_force_disable1 0x015c 1 1 0 High to force disable of AFIR in channel 1.
+core.pa_hw.reg.lf_force_disable0 0x015c 2 1 0 High to force disable of loop filter in channel 0.
+core.pa_hw.reg.lf_force_disable1 0x015c 3 1 0 High to force disable of loop filter in channel 1.
+core.pa_hw.reg.pwm_force_disable0 0x015c 4 1 0 High to force disable of PWM in channel 0.
+core.pa_hw.reg.pwm_force_disable1 0x015c 5 1 0 High to force disable of PWM in channel 1.
+core.pa_hw.otp.gd_pd_strong 0x0155 4 4 0 Gate driver strong pull down enable vector [b1 a1 b0 a0].
+core.clk_sys.enable_dco_ow 0x0180 0 1 0 
+core.clk_sys.enable_dco 0x0180 1 1 0 
+core.clk_sys.dco_enable_ow_single_bits 0x0180 2 1 0 
+core.clk_sys.dco_bias_enable_single_bit 0x0180 3 1 0 
+core.clk_sys.dco_core_bias_enable_single_bit 0x0180 4 1 0 
+core.clk_sys.dco_core_enable_single_bit 0x0180 5 1 0 
+core.clk_sys.dco_clk_enable_single_bit 0x0180 6 1 0 
+core.clk_sys.dpll_enable_ow 0x0181 0 1 0 
+core.clk_sys.dpll_enable 0x0181 1 1 0 
+core.clk_sys.dpll_sleep_ow 0x0181 2 1 0 
+core.clk_sys.dpll_sleep 0x0181 3 1 0 
+core.clk_sys.dpll_run_dco_free_ow 0x0181 4 1 0 
+core.clk_sys.dpll_run_dco_free 0x0181 5 1 0 
+core.clk_sys.dco_trim_coarse 0x0182 0 5 0 
+core.clk_sys.dco_trim_ow 0x0182 5 1 0 
+core.clk_sys.dco_trim_fine 0x0183 0 6 0 
+core.clk_sys.auto_detect_enable_ow 0x0184 0 1 0 
+core.clk_sys.enable_auto_detect 0x0184 1 1 0 
+core.clk_sys.div_ow 0x0184 2 1 0 
+core.clk_sys.mode_m_div 0x0185 0 6 0 
+core.clk_sys.mode_ref_div 0x0185 6 1 0 
+core.clk_sys.mode_fb_div 0x0185 7 1 0 
+core.clk_sys.sys_clk_div 0x0186 0 1 0 System clock frequency select; 0: 24 MHz, 1: 48 MHz
+core.clk_sys.i2s_frame_ow 0x0186 2 1 0 
+core.clk_sys.framesize 0x0186 3 2 0 
+core.clk_sys.i2s_sck_Fs_base 0x0186 5 2 0 
+core.clk_sys.bit_clk 0x0188 0 5 0 
+core.clk_sys.dco_clk_ok_ow 0x0189 0 1 0 
+core.clk_sys.dco_clk_ok 0x0189 1 1 0 
+core.clk_sys.pll_locked_ow 0x0189 2 1 0 
+core.clk_sys.pll_locked 0x0189 3 1 0 
+core.clk_sys.i2s_sck_ok_ow 0x0189 4 1 0 
+core.clk_sys.i2s_sck_ok 0x0189 5 1 0 
+core.clk_sys.dpll_test_enable 0x018a 0 1 0 
+core.clk_sys.dpll_test_mode 0x018a 1 1 0 
+core.clk_sys.dpll_test_start 0x018a 2 1 0 
+core.clk_sys.dpll_test_dco_trim_coarse_range_plus 0x018b 0 4 0 
+core.clk_sys.dpll_test_dco_trim_coarse_range_minus 0x018b 4 4 0 
+core.clk_sys.loopfilter_high_lim 0x018e 0 5 24 
+core.clk_sys.loopfilter_low_lim 0x018f 0 5 0 
+core.clk_sys.loopfilter_reset_val 0x0190 0 5 12 
+core.clk_sys.loopfilter_force_reset 0x0190 5 1 0 
+core.clk_sys.phase_error_read 0x0191 0 1 0 
+core.clk_sys.loopfilter_read 0x0191 1 1 0 
+core.clk_sys.sdm_read 0x0191 2 1 0 
+core.clk_sys.dco_coarse_read 0x0191 3 1 0 
+core.clk_sys.dco_fine_read 0x0191 4 1 0 
+core.clk_sys.status.enable_dco 0x0198 0 1 0 
+core.clk_sys.status.dco_bias_enable 0x0198 1 1 0 
+core.clk_sys.status.dco_core_bias_enable 0x0198 2 1 0 
+core.clk_sys.status.dco_core_enable 0x0198 3 1 0 
+core.clk_sys.status.dco_clk_enable 0x0198 4 1 0 
+core.clk_sys.status.dpll_enable 0x0198 5 1 0 
+core.clk_sys.status.dpll_sleep 0x0198 6 1 0 
+core.clk_sys.status.dpll_run_dco_free 0x0198 7 1 0 
+core.clk_sys.status.mode_m_div 0x019a 0 6 0 
+core.clk_sys.status.mode_ref_div 0x019a 6 1 0 
+core.clk_sys.status.mode_fb_div 0x019a 7 1 0 
+core.clk_sys.status.enable_auto_detect 0x019b 0 1 0 
+core.clk_sys.status.framesize 0x019b 1 2 0 
+core.clk_sys.status.i2s_sck_Fs_base 0x019b 3 2 0 
+core.clk_sys.status.bit_clk 0x019d 0 5 0 
+core.clk_sys.status.i2s_sck_ok 0x019e 0 1 0 
+core.clk_sys.status.dco_clk_ok 0x019e 1 1 0 
+core.clk_sys.status.pll_locked 0x019e 2 1 0 
+core.clk_sys.status.counters_syncronized 0x019e 3 1 0 
+core.clk_sys.status.phase_max 0x019e 4 1 0 
+core.clk_sys.status.dpll_test_done 0x019f 0 1 0 
+core.clk_sys.status.dpll_test_ok 0x019f 4 1 0 
+core.clk_sys.outputs.phase_error__0 0x01a4 0 8 0 
+core.clk_sys.outputs.phase_error__1 0x01a5 0 2 0 
+core.clk_sys.outputs.loopfilter__0 0x01a6 0 8 0 
+core.clk_sys.outputs.loopfilter__1 0x01a7 0 8 0 
+core.clk_sys.outputs.loopfilter__2 0x01a8 0 5 0 
+core.clk_sys.outputs.sdm__0 0x01a9 0 8 0 
+core.clk_sys.outputs.sdm__1 0x01aa 0 1 0 
+core.clk_sys.outputs.dco_coarse 0x01ab 0 5 0 
+core.clk_sys.outputs.dco_fine 0x01ac 0 6 0 
+core.clk_sys.outputs.dco_test_freq_count_locked__0 0x01ad 0 8 0 
+core.clk_sys.outputs.dco_test_freq_count_locked__1 0x01ae 0 6 0 
+core.clk_sys.outputs.dco_test_coarse_locked 0x01af 0 5 0 
+core.clk_sys.outputs.dco_test_fine_locked 0x01b0 0 6 0 
+core.clk_sys.outputs.dco_test_freq_count_coarse_max__0 0x01b1 0 8 0 
+core.clk_sys.outputs.dco_test_freq_count_coarse_max__1 0x01b2 0 6 0 
+core.clk_sys.outputs.dco_test_freq_count_coarse_min__0 0x01b3 0 8 0 
+core.clk_sys.outputs.dco_test_freq_count_coarse_min__1 0x01b4 0 6 0 
+core.clk_sys.outputs.dco_test_coarse_start 0x01b5 0 5 0 
+core.clk_sys.outputs.dco_test_coarse_max 0x01b6 0 5 0 
+core.clk_sys.outputs.dco_test_coarse_min 0x01b7 0 5 0 
+core.clk_sys.outputs.dco_test_freq_count_fine_max__0 0x01b8 0 8 0 
+core.clk_sys.outputs.dco_test_freq_count_fine_max__1 0x01b9 0 6 0 
+core.clk_sys.outputs.dco_test_freq_count_fine_min__0 0x01ba 0 8 0 
+core.clk_sys.outputs.dco_test_freq_count_fine_min__1 0x01bb 0 6 0 
+core.clk_sys.outputs.dco_test_fine_max 0x01bc 0 6 0 
+core.clk_sys.outputs.dco_test_fine_min 0x01bd 0 6 0 
+core.clk_sys.outputs.dco_test_freq_count__0 0x01be 0 8 0 
+core.clk_sys.outputs.dco_test_freq_count__1 0x01bf 0 6 0 
+core.clk_sys.outputs.dco_test_coarse 0x01c0 0 5 0 
+core.clk_sys.outputs.dco_test_fine 0x01c1 0 6 0 
+core.clk_sys.outputs.dco_test_coarse_gray 0x01c2 0 5 0 
+core.clk_sys.outputs.dco_test_fine_gray 0x01c3 0 6 0 
+core.clk_sys.dco_bias_trim 0x0192 0 3 0 
+core.clk_sys.dpll_run_dco_free_allowed_ow 0x0181 6 1 0 
+core.clk_sys.dpll_run_dco_free_allowed 0x0181 7 1 0 
+core.clk_sys.Gp 0x018c 0 5 8 
+core.clk_sys.Gi 0x018d 0 5 6 
+core.clk_sys.status.dpll_run_dco_free_allowed 0x0199 0 1 0 
+core.clk_sys.data_rate_ow 0x0187 4 1 0 
+core.clk_sys.data_rate 0x0187 0 4 0 
+core.clk_sys.status.data_rate 0x019c 0 4 0 
+core.clk_sys.calib_test_enable 0x0193 0 1 0 
+core.clk_sys.calib_test_mode 0x0193 1 1 0 
+core.clk_sys.calib_test_start 0x0193 2 1 0 
+core.clk_sys.calib_fine_trim_stop_bit 0x0193 3 2 0 
+core.clk_sys.status.calib_test_done 0x019f 5 1 0 
+core.clk_sys.status.calib_test_ok 0x019f 6 1 0 
+core.clk_sys.outputs.calib_test_freq_count_high__0 0x01c4 0 8 0 
+core.clk_sys.outputs.calib_test_freq_count_high__1 0x01c5 0 6 0 
+core.clk_sys.outputs.calib_test_freq_count_low__0 0x01c6 0 8 0 
+core.clk_sys.outputs.calib_test_freq_count_low__1 0x01c7 0 6 0 
+core.clk_sys.outputs.calib_test_coarse 0x01c8 0 6 0 
+core.clk_sys.outputs.calib_test_fine 0x01c9 0 6 0 
+core.clk_sys.clear_all_latched_bits 0x0194 0 1 0 
+core.clk_sys.clear_latched_div_bits 0x0194 1 1 0 
+core.clk_sys.clear_latched_ok_bits 0x0194 2 1 0 
+core.clk_sys.clear_latched_pll_bits 0x0194 3 1 0 
+core.clk_sys.status.dpll_test_coarse_done 0x019f 1 1 0 
+core.clk_sys.status.dpll_test_fine_done 0x019f 2 1 0 
+core.clk_sys.status.dpll_test_error 0x019f 3 1 0 
+core.clk_sys.status.mode_div_changed_at_clk_sys 0x01a0 0 1 0 
+core.clk_sys.status.mode_m_div_changed_at_clk_sys 0x01a0 1 1 0 
+core.clk_sys.status.mode_ref_div_changed_at_clk_sys 0x01a0 2 1 0 
+core.clk_sys.status.mode_fb_div_changed_at_clk_sys 0x01a0 3 1 0 
+core.clk_sys.status.i2s_sck_ok_at_clk_sys 0x01a1 0 1 0 
+core.clk_sys.status.dco_clk_ok_at_clk_sys 0x01a1 1 1 0 
+core.clk_sys.status.pll_locked_at_clk_sys 0x01a1 2 1 0 
+core.clk_sys.status.counters_syncronized_at_clk_sys 0x01a1 3 1 0 
+core.clk_sys.status.phase_max_at_clk_sys 0x01a1 4 1 0 
+core.clk_sys.status.mode_div_changed_latched 0x01a2 0 1 0 
+core.clk_sys.status.mode_m_div_changed_latched 0x01a2 1 1 0 
+core.clk_sys.status.mode_ref_div_changed_latched 0x01a2 2 1 0 
+core.clk_sys.status.mode_fb_div_changed_latched 0x01a2 3 1 0 
+core.clk_sys.status.pll_locked_error 0x01a3 0 1 0 
+core.clk_sys.status.phase_max_error 0x01a3 1 1 0 
+core.clk_sys.status.counters_syncronized_error 0x01a3 2 1 0 
+core.clk_sys.status.i2s_sck_ok_error 0x01a3 3 1 0 
+core.clk_sys.status.dco_clk_ok_error 0x01a3 4 1 0 
+core.clk_sys.afir_clk_div 0x0186 1 1 0 AFIR clock frequency select; 0: 24 MHz, 1: 12 MHz
+core.asense.temp_en 0x01e0 0 1 1 
+core.asense.pvdd_en 0x01e0 1 1 1 
+core.asense.pin_en 0x01e0 2 1 0 
+core.asense.debug0_en 0x01e0 3 1 0 
+core.asense.debug1_en 0x01e0 4 1 0 
+core.asense.current_sense_en 0x01e0 5 1 0 
+core.asense.voltage_sense_en 0x01e0 6 1 0 
+core.asense.ch0_sense_en 0x01e0 7 1 0 
+core.asense.ch1_sense_en 0x01e1 0 1 0 
+core.asense.cal_rate 0x01e1 1 2 1 
+core.asense.cal_vref__0 0x01e2 0 8 205 
+core.asense.cal_vref__1 0x01e3 0 8 204 
+core.asense.cal_intref__0 0x01e4 0 8 0 
+core.asense.cal_intref__1 0x01e5 0 8 128 
+core.asense.cal_intdsref__0 0x01e6 0 8 0 
+core.asense.cal_intdsref__1 0x01e7 0 8 128 
+core.asense.weight_cal_en 0x01e8 0 1 1 
+core.asense.gain_cal_en 0x01e8 1 1 1 
+core.asense.int_cal_en 0x01e8 2 1 0 
+core.asense.intds_cal_en 0x01e8 3 1 0 
+core.asense.perma_en 0x01e8 4 1 0 
+core.asense.adc_iv_rate 0x01e8 5 2 1 
+core.asense.adc_aux_rate 0x01e9 0 3 2 
+core.asense.adc_phase 0x01e9 3 4 3 
+core.asense.adc_in_phase 0x01ea 4 4 7 
+core.asense.int_cscale 0x01eb 0 2 3 
+core.asense.buf_start 0x01ec 0 8 47 
+core.asense.buf_prech_dur 0x01ed 0 4 4 
+core.asense.buf_zero_dur 0x01ed 4 4 5 
+core.asense.buf_set_dur 0x01ee 0 4 2 
+core.asense.buf_adc_ready1 0x01ee 4 4 5 
+core.asense.buf_adc_ready2 0x01ef 0 4 9 
+core.asense.ref_int_dur 0x01ef 4 4 6 
+core.asense.int0_start 0x01f0 0 8 12 
+core.asense.int1_start 0x01f1 0 8 31 
+core.asense.int_zero_dur 0x01f3 0 4 5 
+core.asense.int_run_dur 0x01f3 4 4 7 
+core.asense.int_adc_ready1 0x01f4 0 4 5 
+core.asense.int_adc_ready2 0x01f4 4 4 10 
+core.asense.pwm_clk_div_base 0x01f5 0 3 2 
+core.asense.adc_debug_pcm__0 0x01f6 0 8 0 
+core.asense.adc_debug_pcm__1 0x01f7 0 8 0 
+core.asense.adc_c_clamp_en 0x01e9 7 1 0 
+core.asense.int_zero_clamp_disable 0x01f2 0 1 1 
+core.asense.int_zero_clamp_perma 0x01f2 1 1 0 
+core.asense.int_zero_clamp_dur 0x01f2 2 4 3 
+core.asense.adc_c_clamp_dur 0x01ea 0 4 3 
+core.spare.spare_d_n_bits 0x0222 0 4 0 
+core.spare.spare_a_n_bits 0x0220 0 3 0 
+core.spare.spare_a_s_bits 0x0224 0 4 0 
+core.spare.spare_d_s_bits 0x0226 0 6 0 
+core.spare.spare_d_n_mon 0x0223 0 4 0 
+core.spare.spare_a_n_mon 0x0221 0 2 0 
+core.spare.spare_a_s_mon 0x0225 0 4 0 
+core.spare.spare_d_s_mon 0x0227 0 8 0 
+core.spare.spare_bits_0 0x0228 1 7 0 
+core.spare.spare_bits_1 0x0229 0 8 0 
+core.spare.spare_bits_0_0 0x0228 0 1 0 [rev1_1] Fly-cap balancing enable. 0: Force disable balancing, 1: Enable regular fly-cap balancing. 
+core.test.i2c_in_en 0x0200 0 1 1 
+core.test.i2c_scl_out_en 0x0200 1 1 1 
+core.test.i2c_sda_out_en 0x0200 2 1 1 
+core.test.sif_mode_i2c 0x0200 3 1 1 
+core.test.xpin_mode 0x0201 0 3 0 0=>default opendrain, 1=>digital, 2=>power, 3=>Analog unbuf, 4=>Analog Cur, 5=>Analog buffer
+core.test.xpin_cfg 0x0201 4 3 1 
+core.test.xpin_cfg_force 0x0201 7 1 0 
+core.test.afir_bist_en 0x0212 0 1 0 Start afir bist test
+core.test.afir_bist_results_0 0x0212 5 1 0 afir_bist_results_0
+core.test.afir_bist_cfg 0x0212 3 2 0 Afir bist mode
+core.test.afir_bist_results_1 0x0212 6 1 0 afir_bist_results_1
+core.test.en_clk_pad 0x0206 4 1 0 High to enable DCO clock probe pad
+core.test.nreset_lock 0x0206 5 1 0 High to lock device in non-reset state
+core.test.d0_mux_sel 0x0202 0 8 0 Debug 0 (nclip) mux select
+core.test.d1_mux_sel 0x0203 0 8 0 Debug 1 (nerr) mux select
+core.test.revision0 0x0209 0 8 0 Subversion revision of the register bank
+core.test.revision1 0x020a 0 8 0 Subversion revision of the register bank
+core.test.dsp_ram_pm_bist 0x020b 4 4 0 DSP program memory bist config
+core.test.dsp_ram_dm_bist 0x020b 0 4 0 DSP data memory bist config
+core.test.dsp_ram_pm_status 0x020c 0 8 0 DSP program memory bist status
+core.test.dsp_ram_dm_status 0x020d 0 8 0 DSP data memory bist status
+core.test.dsp_ram_pm_addr_lo 0x020e 0 8 0 DSP program memory bist address ptr low bits
+core.test.dsp_ram_dm_addr_lo 0x0210 0 8 0 DSP data memory bist address ptr low bits
+core.test.dsp_ram_pm_addr_hi 0x020f 0 2 0 DSP program memory bist address ptr high bits
+core.test.dsp_ram_dm_addr_hi 0x0211 0 2 0 DSP data memory bist address ptr high bits
+core.test.d2_mux_sel 0x0204 0 8 0 Debug 2 (i2s_sdo) mux select
+core.test.i2s_sdo_debug_out 0x0206 6 1 0 High to enable debug 2 output on i2s_sdo
+core.test.i2s_sdo_reclk_bypass 0x0206 7 1 0 High to enable bypass of the output register on i2s_sdo located in the south pad segment.
+core.test.afir_bist_start 0x0212 1 1 0 Start afir bist test
+core.test.afir_bist_cont 0x0212 2 1 0 afir bist continuous test
+core.test.afir_bist_prbg_seed_0 0x0213 0 8 0 Pseudo random bit generator seed - 10 bits
+core.test.afir_bist_prbg_seed_1 0x0214 0 2 0 Pseudo random bit generator seed - 10 bits
+core.test.afir_bist_error_prbg_seed_0 0x0215 0 8 0 Pseudo random bit generator seed - 10 bits, latched when error
+core.test.afir_bist_error_cnt 0x0217 0 8 0 Afir element counter - latched counter value when error
+core.test.afir_bist_error_prbg_seed_1 0x0216 0 2 0 Pseudo random bit generator seed - 10 bits, latched when error
+core.test.afir_bist_results_2 0x0212 7 1 0 afir_bist_results_2
+core.system.otp_boot_done 0x0258 0 1 0 Indicate that trim values has been loaded
+core.system.dac_dither_level 0x0259 0 2 1 DAC dither level: 00: Off, 01: Small, 10: Medium, 11: Large
+core.system.afir_clk_invert 0x025a 2 1 0 Invert clock to afir
+core.system.acfg_dcu_upd_block 0x025a 3 1 0 High to block DCU update
+core.system.otp_reg_start_time 0x025d 0 8 50 Number of 3 MHz cycles to wait for regulators to settle before accessing OTP
+core.system.otp_write_time 0x025e 0 8 100 Number of 10 us cycles to keep the OTP program pin asserted
+core.system.force_play 0x025a 4 1 0 Debug: Force sub blocks to play audio
+core.system.force_pll 0x025a 5 1 0 Debug: Force pll enable
+core.system.rb_protect 0x0260 0 3 0 Register bank protection level; 0: public, 1: read only, 2: hidden
+core.system.rb_protect_override 0x0261 0 8 0 Register bank protection override
+core.system.otp_write_enable 0x025f 0 8 0 Magic value to enable OTP writes
+core.system.temp_chip_shift 0x0263 0 3 0 Number of MSBs to discard on the ADC temperature measurement avail in pa.temp_chip
+core.system.bgr_filt_div_1_not_3 0x025a 0 1 0 Increase the frequency of the bandgap filter to 64 KHz instead of 192 KHz
+core.system.dmem_protect 0x0262 3 1 0 Write protect DSP data memory
+core.system.pmem_protect 0x0262 2 1 0 Write protect DSP program memory
+core.system.mlp_protect 0x0262 0 1 0 Write protect multi-level pin segment
+core.system.acfg_protect 0x0262 1 1 0 Write protect analog configuration segment
+mlpin.mlp.limit0 0x0500 0 6 1 120 KOhm upper limit
+mlpin.mlp.limit1 0x0501 0 6 5 62 KOhm upper limit
+mlpin.mlp.limit2 0x0502 0 6 9 39 KOhm upper limit
+mlpin.mlp.limit3 0x0503 0 6 14 30 KOhm upper limit
+mlpin.mlp.limit4 0x0504 0 6 18 24 KOhm upper limit
+mlpin.mlp.limit5 0x0505 0 6 22 20 KOhm upper limit
+mlpin.mlp.limit6 0x0506 0 6 28 15 KOhm upper limit
+mlpin.mlp.limit7 0x0507 0 6 40 10 KOhm upper limit
+mlpin.mlp.limit8 0x0508 0 6 54 10 KOhm lower limit
+mlpin.mlp.decrement 0x0509 3 1 1 Enable auto-decrement of the select register allowing you to do sequential messurements of several pins
+mlpin.mlp.sel 0x0509 0 3 5 Start decode of the given pin (see coding on the config registers) or apply test mode load (sel=6)
+mlpin.mlp.msel_cfg 0x050c 0 4 0 msel pin configuration (sel=1); 0: tie high, 1: 120 KOhm
+mlpin.mlp.i2c_ad0_cfg 0x050e 0 4 0 i2c_ad0 pin configuration (sel=3); 2: 62 KOhm, 3: 39 KOhm
+mlpin.mlp.i2c_ad1_cfg 0x050d 0 4 0 i2c_ad1 pin configuration (sel=2); 4: 30 KOhm, 5: 24 KOhm
+mlpin.mlp.i2c_sda_cfg 0x050f 0 4 0 i2c_sda pin configuration (sel=4); 6: 20 KOhm, 7: 15 KOhm
+mlpin.mlp.i2c_scl_cfg 0x0510 0 4 0 i2c_scl pin configuration (sel=5); 8: 10 KOhm, 9: tie low
+mlpin.mlp.timeout 0x050a 0 8 32 Number of calibration clock cycles to wait for ADC to settle
+mlpin.mlp.iset 0x050b 0 6 0 Number of enabled current sources in the last messurement
+mlpin.mlp.sar_disable 0x0509 4 1 0 Test mode where SAR is disabled and the current sources are enabled directly from the iset register
+acfg.avdd.osc_3m_ctrim 0x0608 0 6 0 3MHz RC oscillator coarse trim
+acfg.avdd.osc_3m_ftrim 0x0609 0 6 0 3MHz RC oscillator fine trim
+acfg.avdd.test_mode 0x0608 6 1 0 Overwrite POR circuit
+acfg.avdd.amux_ch1b2 0x0608 7 1 0 Amux ch1 bit 2
+acfg.avdd.amux_ch1b10 0x0609 6 2 0 Amux ch1 bit 1:0
+acfg.avdd.vcf_trim 0x060b 0 4 0 vcf_trim
+acfg.avdd.rxtrim 0x060a 0 8 0 Trim curret try 152
+acfg.avdd.amux_ch0 0x060b 4 4 0 Amux ch0
+acfg.avdd.hw_id 0x060c 0 8 0 Hardware id
+acfg.nb_trim.ldo_vtrim 0x0610 0 6 0 Set ldo vtrim XXX range from to mapping
+acfg.nb_trim.ldo_vset 0x0611 0 3 0 Set the supply voltage for digital core; 101: 0.8V, 110: 0.9V, 111: 1.1V, 000: 1.1V, 001: 1.2V, 010: 1.3V, 011: 1.4V
+acfg.nb_trim.vdd_trim 0x0611 3 5 0 Set vdd vtrim XXX range from to mapping
+acfg.nb_trim.gd_vtrim 0x0612 0 4 0 gd_vtrim
+acfg.nb_trim.gd_vtrim_low 0x0612 4 1 0 gd_vtrim_low XXX fill in
+acfg.nb_trim.enable_dvdd_5v0 0x0610 7 1 0 Enable monitoring of dvdd_5v0 (divided by 5) on debug bus.
+acfg.nb_amux.sel_ch0_gdref 0x0618 0 4 0 sel_ch0_gd_psu_ref
+acfg.nb_amux.sel_ch1_gdref 0x0618 4 4 0 sel_ch1_gd_psu_ref
+acfg.nb_amux.sel_ch0_reg 0x0619 0 4 0 sel_ch0_regulators
+acfg.nb_amux.sel_ch1_reg 0x0619 4 4 0 sel_ch1_regulators
+acfg.afir0.rcmpu_en 0x0640 0 1 0 rcmpu_en xxx filin
+acfg.afir0.rcmpu_set 0x0640 1 3 0 rcmpu_set xxx filin
+acfg.afir0.rfilter_scale 0x0641 5 2 0 rfilter_scale xxx filin
+acfg.afir0.pvdd_scale 0x0640 6 2 0 pvdd_scale xxx filin
+acfg.afir0.dout_en 0x0641 7 1 0 dout_enable
+acfg.afir0.vdsat_trim 0x0641 1 4 0 vdsat trim
+acfg.afir0.icmctrl_trim_en 0x0641 0 1 0 icmctrl_trim_en
+acfg.afir0.cmctrl_en 0x0640 4 1 0 cmctrl_en
+acfg.afir0.spare_dyn 0x0640 5 1 0 spare
+acfg.lf0l.spare_30 0x064b 6 2 0 spare
+acfg.lf0l.afir_rref_trim 0x064b 0 6 0 afir rref trim
+acfg.lf0l.chop_en 0x064a 6 1 0 chop_en XXX fill in
+acfg.lf0l.chop_dis_state 0x064a 5 1 0 chop_dis_state XXX fill in
+acfg.lf0l.fb_res_en_force 0x064a 4 1 0 fb_res_en_force XXX fill in
+acfg.lf0l.rtrim 0x064a 0 4 0 rtrim XXX fill in
+acfg.lf0l.cmr_ctrim_p 0x0649 4 4 0 cmr_ctrim_p XXX fill in
+acfg.lf0l.cmr_ctrim_n 0x0649 0 4 0 cmr_ctrim_n XXX fill in
+acfg.lf0l.cmr_rtrim_p 0x0648 4 4 0 cmr_rtrim_p XXX fill in
+acfg.lf0l.cmr_rtrim_n 0x0648 0 4 0 cmr_rtrim_n XXX fill in
+acfg.lf0l.spare_23 0x064a 7 1 0 spare
+acfg.lf0h.ch0_mux 0x0651 0 4 0 select debug ch0 amux
+acfg.lf0h.spare_1 0x0650 6 2 0 spare_1
+acfg.lf0h.gain_fwd 0x0650 0 3 0 loopfilter gain_fwd
+acfg.lf0h.ch1_mux 0x0651 4 4 0 select debug ch1 amux
+acfg.lf0h.int3_c_scale 0x0650 3 3 0 integrator3 c scale
+acfg.pwm0.sel_ch1_amux 0x0659 4 4 0 select debug ch1 amux XXX fill in coding
+acfg.pwm0.sel_ch0_amux 0x0659 0 4 0 select debug ch0 amux XXX fill in coding
+acfg.pwm0.ipol_pos_b 0x0658 7 1 0 ipol_pos_b XXX fill in
+acfg.pwm0.ipol_neither_b 0x0658 6 1 0 ipol_neither_b XXX fill in
+acfg.pwm0.ipol_neg_b 0x0658 5 1 0 ipol_neg_b XXX fill in
+acfg.pwm0.clk_vcf_upd_b 0x0658 4 1 0 clk_vcf_upd_b XXX fill in
+acfg.pwm0.ipol_pos_a 0x0658 3 1 0 ipol_pos_a XXX fill in
+acfg.pwm0.ipol_neither_a 0x0658 2 1 0 ipol_neither_a XXX fill in
+acfg.pwm0.ipol_neg_a 0x0658 1 1 0 ipol_neg_a XXX fill in
+acfg.pwm0.clk_vcf_upd_a 0x0658 0 1 0 clk_vcf_upd_a XXX fill in
+----------------------------------------------------------------------------------------
+------------ERROR double allocation in register map-------------------------------------
+----------------------------------------------------------------------------------------
+Error number : 0 
+Address : 0x0658 
+Symbol  : acfg.pwm0.pwmtrimch0
+acfg.pwm0.pwmtrimch0 0x0658 0 4 0 signed pwm trim offset ch0
+acfg.lf1l.spare_3_76 0x066b 6 2 0 spare_0
+acfg.lf1l.afir_rref_trim 0x066b 0 6 0 afir_rref_trim
+acfg.lf1l.spare_2_7 0x066a 7 1 0 spare fill in
+acfg.lf1l.chop_en 0x066a 6 1 0 chop_en XXX fill in
+acfg.lf1l.chop_dis_state 0x066a 5 1 0 chop_dis_state XXX fill in
+acfg.lf1l.fb_res_en_force 0x066a 4 1 0 fb_res_en_force XXX fill in
+acfg.lf1l.rtrim 0x066a 0 4 0 rtrim XXX fill in
+acfg.lf1l.cmr_ctrim_p 0x0669 4 4 0 cmr_ctrim_p XXX fill in
+acfg.lf1l.cmr_ctrim_n 0x0669 0 4 0 cmr_ctrim_n XXX fill in
+acfg.lf1l.cmr_rtrim_p 0x0668 4 4 0 cmr_rtrim_p XXX fill in
+acfg.lf1l.cmr_rtrim_n 0x0668 0 4 0 cmr_rtrim_n XXX fill in
+acfg.lf1h.ch1_amux 0x0671 4 4 0 select debug ch1 amux
+acfg.lf1h.ch0_amux 0x0671 0 4 0 select debug ch0 amux
+acfg.lf1h.spare_1 0x0670 6 2 0 spare_1
+acfg.lf1h.gain_fwd 0x0670 0 3 0 loopfilter gain_fwd
+acfg.lf1h.int3_c_scale 0x0670 3 3 0 Integrator3 c scale
+acfg.pwm1.sel_ch1_amux 0x0679 4 4 0 select debug ch1 amux XXX fill in coding
+acfg.pwm1.sel_ch0_amux 0x0679 0 4 0 select debug ch0 amux XXX fill in coding
+acfg.pwm1.ipol_pos_b 0x0678 7 1 0 ipol_pos_b XXX fill in
+acfg.pwm1.ipol_neither_b 0x0678 6 1 0 ipol_neither_b XXX fill in
+acfg.pwm1.ipol_neg_b 0x0678 5 1 0 ipol_neg_b XXX fill in
+acfg.pwm1.clk_vcf_upd_b 0x0678 4 1 0 clk_vcf_upd_b XXX fill in
+acfg.pwm1.ipol_pos_a 0x0678 3 1 0 ipol_pos_a XXX fill in
+acfg.pwm1.ipol_neither_a 0x0678 2 1 0 ipol_neither_a XXX fill in
+acfg.pwm1.ipol_neg_a 0x0678 1 1 0 ipol_neg_a XXX fill in
+acfg.pwm1.clk_vcf_upd_a 0x0678 0 1 0 clk_vcf_upd_a XXX fill in
+----------------------------------------------------------------------------------------
+------------ERROR double allocation in register map-------------------------------------
+----------------------------------------------------------------------------------------
+Error number : 1 
+Address : 0x0678 
+Symbol  : acfg.pwm1.pwmtrimch1
+acfg.pwm1.pwmtrimch1 0x0678 0 4 0 signed pwm trim offset ch1
+acfg.afir1.rcmpu_en 0x0660 0 1 0 rcmpu_en xxx filin
+acfg.afir1.rcmpu_set 0x0660 1 3 0 rcmpu_set xxx filin
+acfg.afir1.rfilter_scale 0x0661 5 2 0 rfilter_scale xxx filin
+acfg.afir1.pvdd_scale 0x0660 6 2 0 pvdd_scale xxx filin
+acfg.afir1.cmctrl_en 0x0660 4 1 0 cmctrl_en dynamic pmp
+acfg.afir1.spare_dyn 0x0660 5 1 0 spare_dynamic
+acfg.afir1.icmctrl_trim_en 0x0661 0 1 0 icmctrl_trim_en
+acfg.afir1.vdsat_trim 0x0661 1 4 0 vdsat_trim
+acfg.afir1.dout_en 0x0661 7 1 0 dout enable
+acfg.adc.vcmbuf_bias 0x0620 0 4 0 Set vcmbuf_bias
+acfg.adc.vrefbuf_bias 0x0620 4 4 0 Set vrefbuf_bias
+acfg.adc.resample_bias 0x0621 0 4 0 Set resamp_bias
+acfg.adc.ref_sel_rladder 0x0621 4 1 0 ref_sel_rladder
+acfg.adc.vrefn_sel 0x0621 5 1 0 vrefn_sel
+acfg.adc.vrefp_sel 0x0621 6 1 0 vrefp_sel
+acfg.adc.vcm_sel 0x0621 7 1 0 vcm_sel
+acfg.sb_amux.sel_ch0 0x0630 0 4 0 Select amux channel 0 input; 0: Internal tie off, 1: Bus connected - nothing selected, N: Bus connected - select input N
+acfg.sb_amux.sel_ch1 0x0630 4 4 0 Select amux channel 1 input; 0: Internal tie off, 1: Bus connected - nothing selected, N: Bus connected - select input N
+dsp.pmem.addr0_0 0x1000 0 8 0 Program memory address 0 least significant byte
+dsp.pmem.addr0_1 0x1001 0 8 0 Program memory address 0 middle byte
+dsp.pmem.addr0_2 0x1002 0 8 0 Program memory address 0 most signficant  byte (writing commits to hardblock memory)
+dsp.pmem.addr1_0 0x1004 0 8 0 Program memory address 1 least significant byte
+dsp.pmem.addr1_1 0x1005 0 8 0 Program memory address 1 middle byte
+dsp.pmem.addr1_2 0x1006 0 8 0 Program memory address 1 most signficant  byte (writing commits to hardblock memory)
+otp.otpmem.byte_0 0x8000 0 8 255 OTP memory byte
+otp.otpmem.byte_1 0x8001 0 8 255 OTP memory byte
+otp.otpmem.byte_2 0x8002 0 8 255 OTP memory byte
+otp.otpmem.byte_3 0x8003 0 8 255 OTP memory byte
+otp.otptrack.datecode3 0x81f1 0 8 255 Finaltest date code byte 3
+otp.otptrack.datecode2 0x81f2 0 8 255 Finaltest date code byte 2
+otp.otptrack.testsite 0x81f0 0 5 31 0-23: Wafernumber, 25: Meruslab, 26: Salland preproduction, 27: ASE, 31:untested
+otp.otptrack.testversion 0x81f0 5 3 7 Test program version
+otp.otptrack.datecode1 0x81f3 0 8 255 Finaltest date code byte 1
+otp.otptrack.datecode0 0x81f4 0 8 255 Finaltest date code byte 0, seconds
+otp.otptrack.testresult 0x81f5 0 8 255 msb:tested,bit2:afirbist,bit1:dspmembist,bit0:vdd_reg

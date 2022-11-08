@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>title</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table border=1>
+<tr><th>Access</th><th>Type</th><th>Segment</th><th>Address</th><th>Test method</th><tr><td rowspan=10>Basic protocol</td><td>core</td><td>pa</td><td>0x0000</td><td rowspan=10>Scantest</td></tr>
+<tr><td>core</td> <td>i2s_tdm</td></tr>
+<tr><td>core</td> <td>pmc</td></tr>
+<tr><td>core</td> <td>prot_sys</td></tr>
+<tr><td>core</td> <td>pa_hw</td></tr>
+<tr><td>core</td> <td>clk_sys</td></tr>
+<tr><td>core</td> <td>asense</td></tr>
+<tr><td>core</td> <td>spare</td></tr>
+<tr><td>core</td> <td>test</td></tr>
+<tr><td>core</td> <td>system</td></tr>
+<tr><td rowspan=1>TBD</td><td>mlpin</td><td>mlp</td><td>0x0500</td><td rowspan=1>Functional</td></tr>
+<tr><td rowspan=13>State machine<br>ACFG protocol</td><td>acfg</td><td>avdd</td><td>0x0600</td><td rowspan=13>Functional</td></tr>
+<tr><td>acfg</td> <td>nb_trim</td></tr>
+<tr><td>acfg</td> <td>nb_amux</td></tr>
+<tr><td>acfg</td> <td>afir0</td></tr>
+<tr><td>acfg</td> <td>lf0l</td></tr>
+<tr><td>acfg</td> <td>lf0h</td></tr>
+<tr><td>acfg</td> <td>pwm0</td></tr>
+<tr><td>acfg</td> <td>lf1l</td></tr>
+<tr><td>acfg</td> <td>lf1h</td></tr>
+<tr><td>acfg</td> <td>pwm1</td></tr>
+<tr><td>acfg</td> <td>afir1</td></tr>
+<tr><td>acfg</td> <td>adc</td></tr>
+<tr><td>acfg</td> <td>sb_amux</td></tr>
+<tr><td rowspan=2>Basic protocol<br>4 bytes data words</td><td>dsp</td><td>pmem</td><td>0x1000</td><td rowspan=2>Bist</td></tr>
+<tr><td>dsp</td> <td>dmem</td></tr>
+<tr><td rowspan=1>Basic protocol<br>PVDD = 7.2V<br>accesstime 1 msec</td><td>otp</td><td>otpmem</td><td>0x8000</td><td rowspan=1>Verify on write</td></tr>
+</table>
+</body>
+</html>

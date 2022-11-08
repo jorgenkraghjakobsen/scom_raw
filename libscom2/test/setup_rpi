@@ -1,0 +1,7 @@
+
+gpio mode 15 out
+gpio mode 16 out 
+
+gpio write 16 0 ;    # mute output 
+gpio write 15 0 ;    # enable = 0  
+gpio write 15 1 ;    # enable = 1 
