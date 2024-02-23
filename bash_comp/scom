@@ -26,9 +26,7 @@ _scom() {
   	   ;;
    trim)
      COMPREPLY=( $( compgen -W "$symbols" -- "$cur" ) )
-     return 0
-	 ;;
-   q)
+     return 0db_lookup
      COMPREPLY=( $( compgen -W "$tables" -- "$cur" ) )
 	 return 0
 	 ;;

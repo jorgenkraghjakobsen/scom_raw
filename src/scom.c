@@ -1713,7 +1713,7 @@ int main(int argc, char **argv)
     }
    int res = ftdi_set_interface(&fc, INTERFACE_A);
    if (strlen(serial)>0)
-    { if (debug) { printf("DEbug open: %s\n",serial); }
+    { if (debug) { printf("Debug open: %s\n",serial); }
       i = ftdi_usb_open_desc(&fc, 0x0403, 0x6010,NULL, serial);
     } else {
     i = ftdi_usb_open_desc(&fc, 0x0403, 0x6010,NULL, NULL);
