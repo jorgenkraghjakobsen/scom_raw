@@ -560,7 +560,7 @@ int lookup_symbol(unsigned char *symbol_view, int addr, int value)
   FILE *db_file;
   unsigned char mask ;
   unsigned char space[128];
-  unsigned char str[256] = {0};
+  unsigned char str[1024] = {0};
   unsigned char line[256];
   unsigned char *symbol ;
   symbol = malloc(256);
@@ -648,7 +648,7 @@ unsigned int otp_read_device_id(unsigned char *cli_arg)
   
   sprintf(cmd,"scom w 0x60c 0 %s; scom r 0x60c -od %s",cli_arg, cli_arg);
   fp = popen(cmd,"r");
-  fscanf(fp,"%d ",&hwid);
+  fscanf(fp,"%s ",&hwid);
   pclose(fp);       
   
   if (debug==1) { printf("hwid : 0x%02x \n",hwid);  }
@@ -798,8 +798,8 @@ long spispeed = 100000;    // spi clock reduced by 4 time due to timing jkj 31.8
 int i2c_address;
 
 
-const double version                  = 0.62;
-const unsigned char release_note[128] = { "OTP ECC general read out rev2"} ;
+const double version                  = 0.65;
+const unsigned char release_note[128] = { "Added serial .scom_serial to store serial in hidden local file"} ;
 
 const char space[] = " ";
 const char clear[4] = { 0xff, 0xff, 0xff, 0xff };
