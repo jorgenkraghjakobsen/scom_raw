@@ -826,6 +826,8 @@ int main(int argc, char **argv)
   unsigned int com_if = 0;                // Default spi
   unsigned int i2c_device = 1;            // Default i2c device pin 3/5 on raspberry pi
                                           // -i2c_dev 0 to force alternaitve i2c bus pin
+  
+
   unsigned char line[128];                // buffer for read in .com_i2c pin 27/28
 
   FILE *fp;
@@ -850,6 +852,9 @@ int main(int argc, char **argv)
   // Commmand line parsing and default values
   // Print version -v[0..1]  -v  Version string
   //                         -v0 Version nr only
+
+  FILE *scom_serial_handle;
+  unsigned char scom_serial[16] = "";
   unsigned char serial[10] = "";
   unsigned char cli_serial[16] = "";
   unsigned char cli_arg[48] = "";
@@ -998,6 +1003,18 @@ int main(int argc, char **argv)
         }
     }
 
+  if (strlen(serial) == 0) 
+  { scom_serial_handle = fopen(".scom_serial", "r");
+    if (scom_serial_handle != NULL)
+    { fgets(line, 127,scom_serial_handle);
+      if (debug) 
+      printf("Read .scom_serial :%s %d        \n",line, (int)strlen(line) );
+      line[(int)strlen(line)-1] = 0;
+      strcpy(serial, line);
+
+      fclose(scom_serial_handle);
+    }      
+  }
   if (com_if == 0)
     { com_file = fopen(".com_i2c", "r");
 
